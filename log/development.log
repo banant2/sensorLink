@@ -1,0 +1,2399 @@
+Started GET "/" for 127.0.0.1 at 2017-07-18 10:39:49 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (8.3ms)
+Completed 200 OK in 369ms (Views: 18.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-18 14:13:24 -0700
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (0.21.0) lib/pg.rb:56:in `initialize'
+pg (0.21.0) lib/pg.rb:56:in `new'
+pg (0.21.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-18 14:13:26 -0700
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (0.21.0) lib/pg.rb:56:in `initialize'
+pg (0.21.0) lib/pg.rb:56:in `new'
+pg (0.21.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-18 14:13:39 -0700
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (0.21.0) lib/pg.rb:56:in `initialize'
+pg (0.21.0) lib/pg.rb:56:in `new'
+pg (0.21.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-18 15:34:01 -0700
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (0.21.0) lib/pg.rb:56:in `initialize'
+pg (0.21.0) lib/pg.rb:56:in `new'
+pg (0.21.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-18 16:15:34 -0700
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (0.21.0) lib/pg.rb:56:in `initialize'
+pg (0.21.0) lib/pg.rb:56:in `new'
+pg (0.21.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-18 18:02:58 -0700
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (0.21.0) lib/pg.rb:56:in `initialize'
+pg (0.21.0) lib/pg.rb:56:in `new'
+pg (0.21.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-18 18:34:06 -0700
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (0.21.0) lib/pg.rb:56:in `initialize'
+pg (0.21.0) lib/pg.rb:56:in `new'
+pg (0.21.0) lib/pg.rb:56:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (131.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "sensorLink_test"[0m
+  [1m[35m (446.7ms)[0m  [1m[35mCREATE DATABASE "sensorLink_test" ENCODING = 'unicode'[0m
+  [1m[35m (26.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1618035578838813645);[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAccounts (20170718183716)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "subdomain" character varying, "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170718183716"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-19 02:34:40.358097"], ["updated_at", "2017-07-19 02:34:40.358097"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1618035578838813645)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (132.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "sensorLink_test"[0m
+  [1m[35m (278.9ms)[0m  [1m[35mCREATE DATABASE "sensorLink_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts" CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "subdomain" character varying, "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170718183716)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-19 02:34:55.442558"], ["updated_at", "2017-07-19 02:34:55.442558"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-07-18 22:22:48 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-19 15:30:01 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 406ms (Views: 402.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-19 15:30:09 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 15:23:07 -0700
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 1610ms (Views: 1588.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 15:23:55 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 127ms (Views: 121.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2017-07-20 15:24:04 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/root" for 127.0.0.1 at 2017-07-20 15:24:21 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/root"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-20 15:24:34 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 60ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 15:40:57 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 152ms (Views: 142.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 16:10:18 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 91ms (Views: 84.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 17:02:55 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 324ms (Views: 321.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-20 17:02:59 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 106ms (Views: 41.7ms | ActiveRecord: 37.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 17:56:01 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 362ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__261212142011478024_70235021617360'
+Started GET "/" for 127.0.0.1 at 2017-07-20 17:58:11 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 391ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___4407125913972848010_70106265638340'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:03:47 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 348ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___3048491888478826846_70168424401640'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:10:23 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:10:39 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 318ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2762210828309893677_70130290528360'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:11:54 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2762210828309893677_70130308542580'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:12:09 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2762210828309893677_70130311115140'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:12:33 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2762210828309893677_70130344440180'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:12:37 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2762210828309893677_70130261651140'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:13:15 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 322ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2076758065462548382_70151198739640'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:14:54 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:15:24 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:17:01 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 762ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6: 
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+   10: 
+  
+app/assets/stylesheets/application.css.scss:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3892765104410054011_70222939140620'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:27:57 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 431ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6: 
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+   10: 
+  
+app/assets/stylesheets/application.css.scss:4
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1470222224868275671_70229590137740'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:29:42 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 316ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: twitter/bootstrap.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:5
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2249241193784768511_70096106538240'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:30:21 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 454ms (Views: 451.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:32:41 -0700
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 284ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "_variable.scss.css" is not present in the asset pipeline.):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "_variable.scss" %>
+    7:   <%= javascript_include_tag "_variable.scss" %>
+    8: 
+    9: </head>
+  
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___380415151446512874_70302965804720'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:33:29 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 7513ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( _variable.css )` to `config/initializers/assets.rb` and restart your server):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "_variable" %>
+    7:   <%= javascript_include_tag "_variable" %>
+    8: 
+    9: </head>
+  
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___782059342471860387_70095721236020'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:38:19 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 332ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: variables.
+Load paths:
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/stylesheets/application.css.scss:2
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___3324541700837916688_70215821348240'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:39:51 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4900ms (Views: 4897.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:41:35 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 151ms (Views: 147.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:46:09 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/welcome/index.html.erb:4: syntax error, unexpected ')'
+...nt', new_account_path, class: );@output_buffer.safe_append='...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/welcome/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/welcome/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/welcome/index.html.erb:4: syntax error, unexpected ')'
+app/views/welcome/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/welcome/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:48:40 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 518ms (Views: 516.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:50:55 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/welcome/index.html.erb:4: syntax error, unexpected ')'
+...nt", new_account_path, class: );@output_buffer.safe_append='...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/welcome/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/welcome/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/welcome/index.html.erb:4: syntax error, unexpected ')'
+app/views/welcome/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/welcome/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:54:07 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 497ms (Views: 494.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:54:31 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 485ms (Views: 482.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:54:35 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 111ms (Views: 109.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:55:34 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 521ms (Views: 519.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:55:44 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 107ms (Views: 103.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 18:55:46 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 88ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 19:02:26 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 511ms (Views: 508.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 19:02:32 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 107ms (Views: 104.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-20 19:02:38 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 170ms (Views: 106.1ms | ActiveRecord: 32.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 19:27:53 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 755ms (Views: 751.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-20 19:27:57 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 25.5ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/accounts/new.html.erb:8: syntax error, unexpected keyword_class, expecting ')'
+...( f.text_field :subdomain class: 'form-control');@output_buf...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/accounts/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/accounts/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/accounts/new.html.erb:8: syntax error, unexpected keyword_class, expecting ')'
+app/views/accounts/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/accounts/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-20 19:29:22 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 9.3ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/accounts/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/accounts/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/accounts/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/accounts/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-07-20 19:29:27 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 525ms (Views: 523.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-20 19:29:29 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/accounts/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/accounts/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/accounts/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/accounts/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-07-20 19:30:53 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 561ms (Views: 559.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-20 19:30:55 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 177ms (Views: 117.4ms | ActiveRecord: 26.7ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2017-07-20 19:32:43 -0700
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ba8BKvISBSbTaRgDj9s012GIB8PJkeF07/hHBUywNKwQ/g/0/9oCQCrpUqd0j3Ptl4olwTapt7kVJWRtiGGMEg==", "account"=>{"subdomain"=>""}, "commit"=>"Create Account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (4.9ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE LOWER("accounts"."subdomain") = LOWER($1) LIMIT $2[0m  [["subdomain", ""], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 139ms (Views: 92.0ms | ActiveRecord: 22.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2017-07-20 19:32:47 -0700
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"52Wqa67VS/BDkNDnElexLsTvIFl1braAVvuC4qdB5GfyNKS1ox1MlroQmkPpA/YUMu0CW4pW4E2sJqGKY5Bc2Q==", "account"=>{"subdomain"=>"WWW"}, "commit"=>"Create Account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE LOWER("accounts"."subdomain") = LOWER($1) LIMIT $2[0m  [["subdomain", "www"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 155ms (Views: 146.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2017-07-20 19:32:57 -0700
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kzku5A9ANIIdkqqZqoFXLQwZVrSRiU8jIP/zlwW9Rxw+aCA6Aogz5OQS4D1R1RAX+ht0tm6xGe7aItD/wWz/og==", "account"=>{"subdomain"=>"/"}, "commit"=>"Create Account"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE LOWER("accounts"."subdomain") = LOWER($1) LIMIT $2[0m  [["subdomain", "/"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 302ms (Views: 282.6ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2017-07-20 19:33:00 -0700
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1G6FQvnHeiJu45haJsugsrJxIwkgMKqyGPgnf+Hf7+XBP4uc9A99RJdj0v7dn+eIRHMBC98I/H/iJQQXJQ5XWw==", "account"=>{"subdomain"=>"banant"}, "commit"=>"Create Account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE LOWER("accounts"."subdomain") = LOWER($1) LIMIT $2[0m  [["subdomain", "banant"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "accounts" ("subdomain", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["subdomain", "banant"], ["created_at", "2017-07-21 02:33:00.977507"], ["updated_at", "2017-07-21 02:33:00.977507"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-20 19:33:00 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 71ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1618035578838813645);[0m
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateInstalls (20170721071756)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (57.5ms)[0m  [1m[35mCREATE TABLE "installs" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_installs_on_email" ON "installs"  ("email")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_installs_on_reset_password_token" ON "installs"  ("reset_password_token")[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721071756"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20170721190157)
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721190157"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1618035578838813645)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (244.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "sensorLink_test"[0m
+  [1m[35m (716.6ms)[0m  [1m[35mCREATE DATABASE "sensorLink_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts" CASCADE[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "subdomain" character varying, "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "installs" CASCADE[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "installs" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_installs_on_email" ON "installs"  ("email")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_installs_on_reset_password_token" ON "installs"  ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170721190157)[0m
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718183716),
+(20170721071756);
+
+[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-21 19:30:49.643176"], ["updated_at", "2017-07-21 19:30:49.643176"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-07-24 13:22:18 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 890ms (Views: 886.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signin" for 127.0.0.1 at 2017-07-24 13:25:07 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/signin"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:25:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 824ms (Views: 733.0ms | ActiveRecord: 61.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:27:32 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6/waDnlcr79AqdsrMa3uxkJj5A8+9BfbJIcnK9gVjWL+rRTQdJSo2bkpkY/K+an8tGHGDcHMQRbeWgRDHMQ13A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6/waDnlcr79AqdsrMa3uxkJj5A8+9BfbJIcnK9gVjWL+rRTQdJSo2bkpkY/K+an8tGHGDcHMQRbeWgRDHMQ13A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 153ms (Views: 151.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:27:35 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XqXn9mpDmZ4tgQpL6mZGJvuSckRCRdvY3TOhT2hhyWRL9OkoZ4ue+NQBQO8RMgEcDZBQRr19jRUn7oInrLBx2g==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XqXn9mpDmZ4tgQpL6mZGJvuSckRCRdvY3TOhT2hhyWRL9OkoZ4ue+NQBQO8RMgEcDZBQRr19jRUn7oInrLBx2g==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.6ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 153ms (Views: 150.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:34:20 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 9.3ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 2)):
+    2:   <h2>Sign in</h2>
+    3: 
+    4:   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    5:     <%= form_group_for f, :email, label: false do %>
+    6:       <div class="input-group">
+    7:         <%= f.email_field :email, class: 'form-control input-lg', placeholder: 'Email' %>
+    8:         <span class="input-group-addon glyphicon glyphicon-user"></span>
+  
+app/helpers/form_helper.rb:6:in `form_group_for'
+app/views/devise/sessions/new.html.erb:5:in `block in _app_views_devise_sessions_new_html_erb___4229100458506925000_70259458694160'
+app/views/devise/sessions/new.html.erb:4:in `_app_views_devise_sessions_new_html_erb___4229100458506925000_70259458694160'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:34:38 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 2)):
+    2:   <h2>Sign in</h2>
+    3: 
+    4:   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    5:     <%= form_group_for f, :email, label: false do %>
+    6:       <div class="input-group">
+    7:         <%= f.email_field :email, class: 'form-control input-lg', placeholder: 'Email' %>
+    8:         <span class="input-group-addon glyphicon glyphicon-user"></span>
+  
+app/helpers/form_helper.rb:6:in `form_group_for'
+app/views/devise/sessions/new.html.erb:5:in `block in _app_views_devise_sessions_new_html_erb___4229100458506925000_70259469208040'
+app/views/devise/sessions/new.html.erb:4:in `_app_views_devise_sessions_new_html_erb___4229100458506925000_70259469208040'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:50:58 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 11.3ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:6: syntax error, unexpected '='
+...=( f.email_field :email, class= 'form-control input-lg', pla...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:6: syntax error, unexpected ',', expecting ')'
+...class= 'form-control input-lg', placeholder: 'Email' );@outp...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:13: syntax error, unexpected '='
+...f.email_field :password, class= 'form-control input-lg', pla...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:13: syntax error, unexpected ',', expecting ')'
+...class= 'form-control input-lg', placeholder: 'Password' );@o...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:6: syntax error, unexpected '='
+app/views/devise/sessions/new.html.erb:6: syntax error, unexpected ',', expecting ')'
+app/views/devise/sessions/new.html.erb:13: syntax error, unexpected '='
+app/views/devise/sessions/new.html.erb:13: syntax error, unexpected ',', expecting ')'
+app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:52:52 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 10.7ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:6: syntax error, unexpected '='
+...=( f.email_field :email, class= 'form-control input-lg', pla...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:6: syntax error, unexpected ',', expecting ')'
+...class= 'form-control input-lg', placeholder: 'Email' );@outp...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:13: syntax error, unexpected '='
+...f.email_field :password, class= 'form-control input-lg', pla...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:13: syntax error, unexpected ',', expecting ')'
+...class= 'form-control input-lg', placeholder: 'Password' );@o...
+...                               ^
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:6: syntax error, unexpected '='
+app/views/devise/sessions/new.html.erb:6: syntax error, unexpected ',', expecting ')'
+app/views/devise/sessions/new.html.erb:13: syntax error, unexpected '='
+app/views/devise/sessions/new.html.erb:13: syntax error, unexpected ',', expecting ')'
+app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:53:41 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 11.5ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:56:41 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 10.2ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 13:57:42 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 13.9ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:02:18 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 15.3ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:02:21 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:06:56 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 12.5ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:07:03 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:08:20 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 13.1ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:08:25 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:30: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:08:58 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 10.7ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:13:56 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 15.2ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-07-24 14:15:33 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets/signin.css.scss to /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets/signin.scss. (called from _app_views_layouts_application_html_erb__2088468830008613848_70252321101080 at /Users/Macbook/plants/sensorLink/sensorLink/app/views/layouts/application.html.erb:6)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:15:38 -0700
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets/signin.css.scss to /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets/signin.scss. (called from _app_views_layouts_application_html_erb__2088468830008613848_70252321101080 at /Users/Macbook/plants/sensorLink/sensorLink/app/views/layouts/application.html.erb:6)
+Completed 200 OK in 6016ms (Views: 6012.8ms | ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 15.1ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/sensorLink/app/views/devise/sessions/new.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/devise/sessions/new.html.erb:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/devise/sessions/new.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:19:28 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (46.3ms)
+Completed 200 OK in 662ms (Views: 607.4ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:20:45 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 674ms (Views: 624.8ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:21:44 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 999ms (Views: 951.7ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:26:10 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 658ms (Views: 611.3ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:27:39 -0700
+  [1m[35m (17.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 660ms (Views: 606.6ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:29:54 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 688ms (Views: 637.9ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:31:50 -0700
+  [1m[35m (21.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 645ms (Views: 590.9ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:35:23 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwjxyt2frjMHimX4Z13yUKbp2wfJuKm789ma1nE+D06eWf8U0FepVf4KL1ycCbVqUOv5BTaA/3YJBLm+te+38A==", "user"=>{"email"=>"hjk@xc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 32ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwjxyt2frjMHimX4Z13yUKbp2wfJuKm789ma1nE+D06eWf8U0FepVf4KL1ycCbVqUOv5BTaA/3YJBLm+te+38A==", "user"=>{"email"=>"hjk@xc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (7.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 390ms (Views: 385.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:45:43 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfyWcJC0gFYTt6gZ+d0V+Psm+oAmTAn6MYVMN6QJANosrZiunXyHMOo34r0CiVLCDSTYgtl0XzfLWG9fYNi4ZA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfyWcJC0gFYTt6gZ+d0V+Psm+oAmTAn6MYVMN6QJANosrZiunXyHMOo34r0CiVLCDSTYgtl0XzfLWG9fYNi4ZA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (15.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 340ms (Views: 321.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 14:45:45 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8PLNgUjl+0UZkG1nzp0fWiFh8QIjitPK92P+mha8EArlo8NfRS38I+AQJ8M1yVhg12PTANyyhQcNvt3y0m2otA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8PLNgUjl+0UZkG1nzp0fWiFh8QIjitPK92P+mha8EArlo8NfRS38I+AQJ8M1yVhg12PTANyyhQcNvt3y0m2otA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 167ms (Views: 163.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 15:53:43 -0700
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (23.3ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 13.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for {:label=>false}:Hash):
+    2:   <h2>Sign in</h2>
+    3: 
+    4:   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    5:     <%= form_group_for f, :email, label: false do%>
+    6:         <div class="input_group">
+    7:           <%= f.email_field :email, class: 'form_control input_lg', placeholder: 'Email'%>
+    8:           <span class="input-group-addon glyphicon glyphicon-user"></span>
+  
+app/helpers/form_helper.rb:7:in `form_group_for'
+app/views/devise/sessions/new.html.erb:5:in `block in _app_views_devise_sessions_new_html_erb___2321319232320790503_70262382481960'
+app/views/devise/sessions/new.html.erb:4:in `_app_views_devise_sessions_new_html_erb___2321319232320790503_70262382481960'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 15:55:29 -0700
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 13.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for {:label=>false}:Hash):
+    2:   <h2>Sign in</h2>
+    3: 
+    4:   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    5:     <%= form_group_for f, :email, label: false do%>
+    6:         <div class="input_group">
+    7:           <%= f.email_field :email, class: 'form_control input_lg', placeholder: 'Email'%>
+    8:           <span class="input-group-addon glyphicon glyphicon-user"></span>
+  
+app/helpers/form_helper.rb:7:in `form_group_for'
+app/views/devise/sessions/new.html.erb:5:in `block in _app_views_devise_sessions_new_html_erb___908418413675338271_70335811365120'
+app/views/devise/sessions/new.html.erb:4:in `_app_views_devise_sessions_new_html_erb___908418413675338271_70335811365120'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 15:59:06 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 693ms (Views: 609.4ms | ActiveRecord: 40.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:09:53 -0700
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (44.5ms)
+Completed 500 Internal Server Error in 524ms (ActiveRecord: 39.1ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'twitter/bootstrap' with type 'application/javascript'
+Checked in these paths: 
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2725322832026465810_70264983818060'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:11:20 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (45.0ms)
+Completed 500 Internal Server Error in 505ms (ActiveRecord: 14.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'twitter/bootstrap' with type 'application/javascript'
+Checked in these paths: 
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/config
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/images
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/javascripts
+  /Users/Macbook/plants/sensorLink/sensorLink/app/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actioncable-5.1.2/lib/assets/compiled
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/actionview-5.1.2/lib/assets/compiled
+  /Users/Macbook/plants/sensorLink/sensorLink/node_modules
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/Macbook/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/images):
+    3: <head>
+    4:   <title>SensorLink</title>
+    5:   <%= csrf_meta_tags %>
+    6:   <%= stylesheet_link_tag "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8: 
+    9: </head>
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__2334495043284429190_70227985639660'
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:22:31 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 726ms (Views: 723.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-24 16:22:35 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 188ms (Views: 109.3ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:22:45 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 158ms (Views: 151.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:23:27 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 86ms (Views: 84.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:27:25 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 172ms (Views: 143.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:31:08 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 127ms (Views: 123.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:38:07 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 259ms (Views: 255.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:38:12 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 99ms (Views: 96.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signin" for 127.0.0.1 at 2017-07-24 16:38:15 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/signin"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:38:20 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 180ms (Views: 111.7ms | ActiveRecord: 39.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:38:37 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 685ms (Views: 627.3ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:41:20 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 696ms (Views: 645.4ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:43:43 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 140ms (Views: 137.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:46:54 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROr968hqvhPBBXTy2fdZzpYPM0kgUfAPyGcpqpat+jtRu/M1xaK5dTiFPlYiox70YA0RS99ppsIyugrCUnxChQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROr968hqvhPBBXTy2fdZzpYPM0kgUfAPyGcpqpat+jtRu/M1xaK5dTiFPlYiox70YA0RS99ppsIyugrCUnxChQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 186ms (Views: 182.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:46:56 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/jlZ2ZJxCIJBvgChgWsyQr1xvZM1a7GxO3emD7Rz2TbraFcHn7kP5Lg+SgV6P3V4S3OfkcpT53zBqoVncKJhiA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/jlZ2ZJxCIJBvgChgWsyQr1xvZM1a7GxO3emD7Rz2TbraFcHn7kP5Lg+SgV6P3V4S3OfkcpT53zBqoVncKJhiA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 139ms (Views: 136.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:47:30 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x4UfOHEErB+75Yc7xBp70qIDOEFfxONVai7ouDxYxifS1BHmfMyreUJlzZ8/TjzoVAEaQ6D8tZiQ88vQ+Il+mQ==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (15.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 42ms (ActiveRecord: 15.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x4UfOHEErB+75Yc7xBp70qIDOEFfxONVai7ouDxYxifS1BHmfMyreUJlzZ8/TjzoVAEaQ6D8tZiQ88vQ+Il+mQ==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 339ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:47:33 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uIdJ8MC9Rs+or/v+E7DrITVwFivfQYqFoyHyGpSc3lit1kcuzXVBqVEvsVro5Kwbw3I0KSB53EhZ/NFyUE1m5g==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 7ms (ActiveRecord: 1.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uIdJ8MC9Rs+or/v+E7DrITVwFivfQYqFoyHyGpSc3lit1kcuzXVBqVEvsVro5Kwbw3I0KSB53EhZ/NFyUE1m5g==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 280ms (Views: 73.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:47:39 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xH3VlFstr+oJGAZc78X45emuYQiIrwySOrtET2nrex/RLNtKVuWojPCYTPgUkb/fH6xDCneXWl/AZmcnrTrDoQ==", "user"=>{"email"=>"banant@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 1.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xH3VlFstr+oJGAZc78X45emuYQiIrwySOrtET2nrex/RLNtKVuWojPCYTPgUkb/fH6xDCneXWl/AZmcnrTrDoQ==", "user"=>{"email"=>"banant@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 285ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:47:58 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"veFMrbyE6uU4F6d5R7WcNKUMIXZ4DwGmbyvVhVKfxc6osEJzsUztg8GX7d284dsOUw4DdIc3V2uV9vbtlk59cA==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 1.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"veFMrbyE6uU4F6d5R7WcNKUMIXZ4DwGmbyvVhVKfxc6osEJzsUztg8GX7d284dsOUw4DdIc3V2uV9vbtlk59cA==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 285ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:49:22 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/83IqH3vjJzlixKf3S99rgw9zFmA9ZSkAaCteSjgzK/qnMZ2cCeL+hwLWDsmezqU+j/uW3/Nwmn7fY4R7DF0EQ==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/83IqH3vjJzlixKf3S99rgw9zFmA9ZSkAaCteSjgzK/qnMZ2cCeL+hwLWDsmezqU+j/uW3/Nwmn7fY4R7DF0EQ==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 110ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2017-07-24 16:49:25 -0700
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 66ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:49:28 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 64ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-24 16:49:32 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 143ms (Views: 61.7ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:49:44 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:49:52 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iMfgQN/j+qV4nKiBSpQZQpa3feq2DRhxF/5Gu+4YY+6dlu6e0iv9w4Ec4iWxwF54YLVf6Ek1TrztI2XTKsnbUA==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 22ms (ActiveRecord: 1.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iMfgQN/j+qV4nKiBSpQZQpa3feq2DRhxF/5Gu+4YY+6dlu6e0iv9w4Ec4iWxwF54YLVf6Ek1TrztI2XTKsnbUA==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 260ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:50:50 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 737ms (Views: 658.6ms | ActiveRecord: 36.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:50:57 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d5pGb2z/WtyuivJWxhFPmSHbYUWXO51ttbbfxeLPi1xiy0ixYTddulcKuPI9RQij19lDR2gDy6BPa/ytJh4z4g==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 25ms (ActiveRecord: 2.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d5pGb2z/WtyuivJWxhFPmSHbYUWXO51ttbbfxeLPi1xiy0ixYTddulcKuPI9RQij19lDR2gDy6BPa/ytJh4z4g==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 325ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:51:03 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ip+aNe3ss3p0xoKfx+YIhJL8hHQcRJZQcl4+AcF8CTU3zpTr4CS0HI1GyDs8sk++ZP6mduN8wJ2Igx1pBa2xiw==", "user"=>{"email"=>"banant@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ip+aNe3ss3p0xoKfx+YIhJL8hHQcRJZQcl4+AcF8CTU3zpTr4CS0HI1GyDs8sk++ZP6mduN8wJ2Igx1pBa2xiw==", "user"=>{"email"=>"banant@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 378ms (Views: 159.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:51:11 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IDSI/l7i8PK28mP76eY5cY+dzPp+DBYDWH+2oasEtqc1ZYYgUyr3lE9yKV8Ssn5LeZ/u+IE0QM6iopXJb9UOGQ==", "user"=>{"email"=>"Bharat@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bharat@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 18ms (ActiveRecord: 1.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IDSI/l7i8PK28mP76eY5cY+dzPp+DBYDWH+2oasEtqc1ZYYgUyr3lE9yKV8Ssn5LeZ/u+IE0QM6iopXJb9UOGQ==", "user"=>{"email"=>"Bharat@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 332ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:51:51 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 89ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:52:03 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-07-24 16:52:04 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 136ms (Views: 72.9ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2017-07-24 16:52:17 -0700
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mXMZB9j7IJnRiAllShqPO4wxew7OJQE/wRpdyqKzEPGMIhfZ1TMn/ygIQ8GxTsgBejNZDDEdV/I7x36iZmKoTw==", "account"=>{"owner_attributes"=>{"name"=>"Bharat", "email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "subdomain"=>"banant2"}, "commit"=>"Create Account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE LOWER("accounts"."subdomain") = LOWER($1) LIMIT $2[0m  [["subdomain", "banant2"], ["LIMIT", 1]]
+  [1m[36mUser Exists (26.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 380ms (Views: 89.8ms | ActiveRecord: 39.9ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2017-07-24 16:53:42 -0700
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M5C9OUTsjIa2rWvQKW/RtaApmiI49QLCdkWLPxcys0EmwbPnSSSL4E8tIXTSO5aPViu4IMfNVA+MmKhX0+ML/w==", "account"=>{"owner_attributes"=>{"name"=>"Bharat", "email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "subdomain"=>"banant2"}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE LOWER("accounts"."subdomain") = LOWER($1) LIMIT $2[0m  [["subdomain", "banant2"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bharat"], ["email", "banant2@gmail.com"], ["encrypted_password", "$2a$11$MIO.mOA1H6gaKfeD6EGRWuN1Mf3QJXDa2e/XzIu58ETiHgkK11G1a"], ["created_at", "2017-07-24 23:53:42.938721"], ["updated_at", "2017-07-24 23:53:42.938721"]]
+  [1m[35mSQL (19.7ms)[0m  [1m[32mINSERT INTO "accounts" ("subdomain", "owner_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["subdomain", "banant2"], ["owner_id", 1], ["created_at", "2017-07-24 23:53:42.944028"], ["updated_at", "2017-07-24 23:53:42.944028"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 249ms (ActiveRecord: 25.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:53:42 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 86ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:53:55 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 16:54:01 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"87wYbroYMMYloYE/gjROX1HhwAoBHMmFCQtFFovCRevm7Rawt9A3oNwhy5t5YAllp+PiCP4kn0jz1mZ+TxP9VQ==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 232ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:54:01 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-07-24 16:54:07 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nIqcFVtL1P8rrxdD2Tkm2ne/hXK6Koace6jHW4wzQ+sknfQ3eDhyVhPKiaPsqgkPez3624b+4LooPflf7ElHlg=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:54:07 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:57:10 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 570ms (Views: 567.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:57:12 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 64ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:57:15 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 140ms (Views: 138.1ms | ActiveRecord: 0.0ms)
+
+
