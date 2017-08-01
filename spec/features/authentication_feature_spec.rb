@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 describe 'user authentication' do
+  let(:user){build(:user)}
+  let!(:account){build(:account, owner: user)}
+
   it 'allows signin with valid credentials' do
     sign_user_in(create(:user))
     expect(page).to have_content('Signed in successfully')
