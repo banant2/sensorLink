@@ -3,19 +3,25 @@
     <h2>Create an Account</h2>
 
     <%= form_for @account do |f| %>
+
       <%= f.fields_for :owner do |o| %>
+
         <%= form_group_for o, :name do %>
           <%= o.text_field :name, class: 'form-control' %>
         <% end %>
+
         <%= form_group_for o, :email do %>
           <%= o.text_field :email, class: 'form-control' %>
         <% end %>
+
         <%= form_group_for o, :password do %>
           <%= o.password_field :password, class: 'form-control' %>
         <% end %>
+
         <%= form_group_for o, :password_confirmation do %>
           <%= o.password_field :password_confirmation, class: 'form-control' %>
         <% end %>
+
       <% end %>
 
       <%= form_group_for f, :subdomain do %>
@@ -24,7 +30,9 @@
           <span class="input-group-addon">.greenthumb.ai</span>
         </div>
       <% end %>
+
       <%= f.submit class: 'btn btn-primary' %>
+
     <% end %>
   </div>
 </div>

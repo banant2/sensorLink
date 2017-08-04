@@ -3949,3 +3949,605 @@ Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-03 14:31:30 -0700
 SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:41: syntax error, unexpected keyword_end, expecting end-of-input):
   
 app/controllers/sensor/v1/plants_controller.rb:41: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 08:51:41 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:41: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sensor/v1/plants_controller.rb:41: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:00:23 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (Unable to autoload constant Sensor::V1::PlantsController, expected /Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb to define it):
+  
+activesupport (5.1.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.1.2) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.1.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.1.2) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:01:34 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 12.6ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/views/sensor/v1/plants/new.html.erb:6: syntax error, unexpected keyword_do, expecting keyword_end
+...=  form_group_for, :sensorID do @output_buffer.safe_append='
+...                               ^
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/plants/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/sensor/v1/plants/new.html.erb:6: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/sensor/v1/plants/new.html.erb:31: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:09:44 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (239.9ms)
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 8.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `plants_path' for #<#<Class:0x007f9d8aafb570>:0x007f9d8b4c6960>
+Did you mean?  accounts_path):
+    2:   <div class="panel-body">
+    3:     <h2>Add a Plant</h2>
+    4: 
+    5:     <%= form_for @plant do |f| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+  
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___1470206253812751377_70157311795680'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:25:50 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (244.3ms)
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 9.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `sensor_v1' for #<#<Class:0x007ff51ba7e500>:0x007ff520bed260>):
+    2:   <div class="panel-body">
+    3:     <h2>Add a Plant</h2>
+    4: 
+    5:     <%= form_for sensor_v1(@plant) do |f| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+  
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___4451274474397767890_70345353853360'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:26:30 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (249.1ms)
+Completed 500 Internal Server Error in 293ms (ActiveRecord: 8.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `sensor_v1_url' for #<#<Class:0x007fd145bdf240>:0x007fd14120e008>
+Did you mean?  sensor_v1_plant_url):
+    2:   <div class="panel-body">
+    3:     <h2>Add a Plant</h2>
+    4: 
+    5:     <%= form_for sensor_v1_url(@plant) do |f| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+  
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___3420774069272444968_70268358763120'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:30:33 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (422.1ms)
+Completed 500 Internal Server Error in 484ms (ActiveRecord: 21.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `plant' for #<#<Class:0x007faa71a738e8>:0x007faa6ca42a68>
+Did you mean?  @plant):
+    2:   <div class="panel-body">
+    3:     <h2>Add a Plant</h2>
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(plant) do |f| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+  
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___3238803388009948659_70185015288720'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:31:18 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (436.3ms)
+Completed 500 Internal Server Error in 480ms (ActiveRecord: 9.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `o' for #<#<Class:0x007fcc6cdbc7d0>:0x007fcc6edcaba8>):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |f| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb___3492862334493528476_70257988201180'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___3492862334493528476_70257988201180'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:37:10 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 8.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |f| %>
+    6: 
+    7:       <%= form_group_for f, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb__555183874164807878_70225098614360'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb__555183874164807878_70225098614360'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:40:25 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 8.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |f| %>
+    6: 
+    7:       <%= form_group_for f, :sensorID do %>
+    8:         <%= f.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb___74072823071477541_70199981673100'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___74072823071477541_70199981673100'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:53:32 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 9.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |f| %>
+    6: 
+    7:       <%= form_group_for f, :sensorID do %>
+    8:         <%= f.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb___2130097071784434616_70281205409480'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___2130097071784434616_70281205409480'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-04 09:54:39 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 673ms (Views: 641.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-04 09:57:21 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 139ms (Views: 136.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-08-04 09:57:22 -0500
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 167ms (Views: 97.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:59:26 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 8.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb__148099973780936002_70157780125700'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb__148099973780936002_70157780125700'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 09:59:36 -0500
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb__148099973780936002_70157725372300'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb__148099973780936002_70157725372300'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 10:23:50 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 9.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb__3201755357533850944_70210012940060'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb__3201755357533850944_70210012940060'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 10:27:21 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 9.9ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2:   <div class="panel-body">
+    3:     <h2>Add a Plant</h2>
+    4: 
+    5:     <%= form_for @account do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+  
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___1777136643843292131_70176223436440'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 10:36:03 -0500
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2:   <div class="panel-body">
+    3:     <h2>Add a Plant</h2>
+    4: 
+    5:     <%= form_for @account do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+  
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___1777136643843292131_70176217598300'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 10:39:50 -0500
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2:   <div class="panel-body">
+    3:     <h2>Add a Plant</h2>
+    4: 
+    5:     <%= form_for @account do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+  
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___1777136643843292131_70176261245200'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 10:57:25 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 10.8ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2:   <div class="panel-body">
+    3:     <h2>Add a Plant</h2>
+    4: 
+    5:     <%= form_for @account do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+  
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___4004415441884095372_70132103371640'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 10:58:33 -0500
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb___4004415441884095372_70132055796840'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___4004415441884095372_70132055796840'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:01:19 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (392.3ms)
+Completed 500 Internal Server Error in 434ms (ActiveRecord: 8.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `has_errors' for #<#<Class:0x007f818d474738>:0x007f818d47f228>):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:10:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb__3112631582875217440_70097198885520'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb__3112631582875217440_70097198885520'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:24:57 -0500
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 623ms (Views: 585.2ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:32:26 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 9.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb___52862191917930480_70177532444300'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___52862191917930480_70177532444300'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:35:45 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 10.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+     6: 
+     7: 
+     8: 
+     9:       <%= form_group_for o, :name do %>
+    10:         <%= o.text_field :name, class: 'form-control' %>
+    11:       <% end %>
+    12: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:9:in `block in _app_views_sensor_v__plants_new_html_erb___3286001446526891411_70360856847580'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___3286001446526891411_70360856847580'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:36:33 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 9.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb___4307579615762465863_70105536299460'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___4307579615762465863_70105536299460'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:36:34 -0500
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb___4307579615762465863_70105481115940'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___4307579615762465863_70105481115940'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:36:36 -0500
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= form_group_for o, :sensorID do %>
+    8:         <%= o.text_field :sensorID, class: 'form-control' %>
+    9:       <% end %>
+   10: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb___4307579615762465863_70105486319780'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb___4307579615762465863_70105486319780'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:37:05 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 615ms (Views: 580.2ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:41:17 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (410.6ms)
+Completed 500 Internal Server Error in 461ms (ActiveRecord: 10.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f9ebd27a3b8>:0x007f9ebd519768>):
+    4: 
+    5:     <%= form_for sensor_v1_plants_path(@plant) do |o| %>
+    6: 
+    7:       <%= f.fields_for :owner do |o| %>
+    8:         <%= form_group_for o, :sensorID do %>
+    9:           <%= o.text_field :sensorID, class: 'form-control' %>
+   10:         <% end %>
+  
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb__3509344253205778088_70159877527840'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb__3509344253205778088_70159877527840'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-04 11:42:55 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 13.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+     5:     <%= form_for sensor_v1_plants_path(@plant) do |f| %>
+     6: 
+     7:       <%= f.fields_for :plant do |o| %>
+     8:         <%= form_group_for o, :sensorID do %>
+     9:           <%= o.text_field :sensorID, class: 'form-control' %>
+    10:         <% end %>
+    11: 
+  
+app/helpers/form_helper.rb:8:in `form_group_for'
+app/views/sensor/v1/plants/new.html.erb:8:in `block (2 levels) in _app_views_sensor_v__plants_new_html_erb__3303960061269257371_70276993327120'
+app/views/sensor/v1/plants/new.html.erb:7:in `block in _app_views_sensor_v__plants_new_html_erb__3303960061269257371_70276993327120'
+app/views/sensor/v1/plants/new.html.erb:5:in `_app_views_sensor_v__plants_new_html_erb__3303960061269257371_70276993327120'

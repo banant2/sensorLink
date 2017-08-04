@@ -2,27 +2,37 @@
   <div class="panel-body">
     <h2>Add a Plant</h2>
 
-    <%= form_for @plant do |f| %>
-      <%= form_group_for, :sensorID do %>
-        <%= o.text_field :sensorID, class: 'form-control' %>
-      <% end %>
-      <%= form_group_for o, :name do %>
-        <%= o.text_field :name, class: 'form-control' %>
-      <% end %>
-      <%= form_group_for o, :sci_name do %>
-        <%= o.password_field :sci_name, class: 'form-control' %>
-      <% end %>
-      <%= form_group_for o, :nickname do %>
-        <%= o.password_field :nickname, class: 'form-control' %>
-      <% end %>
-      <%= form_group_for o, :zipcode do %>
-        <%= o.password_field :zipcode, class: 'form-control' %>
-      <% end %>
-      <%= form_group_for o, :notes do %>
-        <%= o.password_field :notes, class: 'form-control' %>
-      <% end %>
+    <%= form_for sensor_v1_plants_path(@plant) do |f| %>
 
-      <%= f.submit class: 'btn btn-primary' %>
+      <%= f.fields_for :plant do |o| %>
+        <%= form_group_for o, :sensorID do %>
+          <%= o.text_field :sensorID, class: 'form-control' %>
+        <% end %>
+
+        <%= form_group_for o, :name do %>
+          <%= o.text_field :name, class: 'form-control' %>
+        <% end %>
+
+        <%= form_group_for o, :sci_name do %>
+          <%= o.text_field :sci_name, class: 'form-control' %>
+        <% end %>
+
+        <%= form_group_for o, :nickname do %>
+          <%= o.text_field :nickname, class: 'form-control' %>
+        <% end %>
+
+        <%= form_group_for o, :zipcode do %>
+          <%= o.text_field :zipcode, class: 'form-control' %>
+        <% end %>
+
+        <%= form_group_for o, :notes do %>
+          <%= o.text_field :notes, class: 'form-control' %>
+        <% end %>
+
+        <%= f.submit class: 'btn btn-primary' %>
+
+      <% end %>
     <% end %>
+
   </div>
 </div>
