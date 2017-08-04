@@ -7,6 +7,7 @@ SensorLink::Application.routes.draw do
   namespace :sensor do
     namespace :v1 do
       resources :env_data
+      resources :plants
     end
   end
 end

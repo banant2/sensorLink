@@ -1,0 +1,28 @@
+<div class="col-md-6 col-md-offset-3 panel panel-default">
+  <div class="panel-body">
+    <h2>Add a Plant</h2>
+
+    <%= form_for @plant do |f| %>
+      <%= form_group_for, :sensorID do %>
+        <%= o.text_field :sensorID, class: 'form-control' %>
+      <% end %>
+      <%= form_group_for o, :name do %>
+        <%= o.text_field :name, class: 'form-control' %>
+      <% end %>
+      <%= form_group_for o, :sci_name do %>
+        <%= o.password_field :sci_name, class: 'form-control' %>
+      <% end %>
+      <%= form_group_for o, :nickname do %>
+        <%= o.password_field :nickname, class: 'form-control' %>
+      <% end %>
+      <%= form_group_for o, :zipcode do %>
+        <%= o.password_field :zipcode, class: 'form-control' %>
+      <% end %>
+      <%= form_group_for o, :notes do %>
+        <%= o.password_field :notes, class: 'form-control' %>
+      <% end %>
+
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
