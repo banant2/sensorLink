@@ -1,38 +1,51 @@
-<div class="col-md-6 col-md-offset-3 panel panel-default">
-  <div class="panel-body">
-    <h2>Add a Plant</h2>
+<div class="col-md-6 col-md-offset-3 well Plant Information">
+  <h2>Plant Information</h2>
 
-    <%= form_for sensor_v1_plants_path(@plant) do |f| %>
+  <%= form_for [:sensor, :v1, @plant] do |o| %>
 
-      <%= f.fields_for :plant do |o| %>
-        <%= form_group_for o, :sensorID do %>
-          <%= o.text_field :sensorID, class: 'form-control' %>
-        <% end %>
-
-        <%= form_group_for o, :name do %>
-          <%= o.text_field :name, class: 'form-control' %>
-        <% end %>
-
-        <%= form_group_for o, :sci_name do %>
-          <%= o.text_field :sci_name, class: 'form-control' %>
-        <% end %>
-
-        <%= form_group_for o, :nickname do %>
-          <%= o.text_field :nickname, class: 'form-control' %>
-        <% end %>
-
-        <%= form_group_for o, :zipcode do %>
-          <%= o.text_field :zipcode, class: 'form-control' %>
-        <% end %>
-
-        <%= form_group_for o, :notes do %>
-          <%= o.text_field :notes, class: 'form-control' %>
-        <% end %>
-
-        <%= f.submit class: 'btn btn-primary' %>
-
-      <% end %>
+    <%= form_group_for o, :sensorID, label: false do %>
+      <div class="input-group">
+        <%= o.text_field :sensorID, class: 'form-control input-lg', placeholder: 'SensorID' %>
+        <span class="input-group-addon glyphicon glyphicon-tag"></span>
+      </div>
     <% end %>
 
-  </div>
+    <%= form_group_for o, :name, label: false do %>
+      <div class="input-group">
+        <%= o.text_field :name, class: 'form-control input-lg', placeholder: 'Name Your Plant' %>
+        <span class="input-group-addon glyphicon glyphicon-leaf"></span>
+      </div>
+    <% end %>
+
+    <%= form_group_for o, :sci_name, label: false do %>
+      <div class="input-group">
+        <%= o.text_field :sci_name, class: 'form-control input-lg', placeholder: 'Scientific Name' %>
+        <span class="input-group-addon glyphicon glyphicon-tree-conifer"></span>
+      </div>
+    <% end %>
+
+    <%= form_group_for o, :nickname, label: false do %>
+      <div class="input-group">
+        <%= o.text_field :nickname, class: 'form-control input-lg', placeholder: 'Nickname' %>
+        <span class="input-group-addon glyphicon  glyphicon-tree-conifer"></span>
+      </div>
+    <% end %>
+
+    <%= form_group_for o, :zipcode, label: false do %>
+      <div class="input-group">
+        <%= o.text_field :zipcode, class: 'form-control input-lg', placeholder: 'Zipcode' %>
+        <span class="input-group-addon glyphicon glyphicon-home"></span>
+      </div>
+    <% end %>
+
+    <%= form_group_for o, :notes, label: false do %>
+      <div class="input-group">
+        <%= o.text_field :notes, class: 'form-control input-lg', placeholder: 'Notes' %>
+        <span class="input-group-addon glyphicon glyphicon-pencil"></span>
+      </div>
+    <% end %>
+
+    <div><%= o.submit "Save", class: 'btn btn-primary btn-block btn-lg' %></div>
+  <% end %>
+
 </div>
