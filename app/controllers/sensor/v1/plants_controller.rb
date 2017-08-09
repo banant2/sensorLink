@@ -21,7 +21,7 @@ module Sensor
         if @plant.save
           redirect_to root_path, notice: 'Plant Created Successfully'
         else
-          redirect_to root_path, notice: 'Error Creating Plant'
+          redirect_to root_path, notice: 'SensorID already exists'
         end
       end
 
@@ -36,7 +36,7 @@ module Sensor
 
       private
       def plant_params
-        params.require(:plant).permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes)
+        params.permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes)
       end
     end
   end

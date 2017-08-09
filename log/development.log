@@ -6371,3 +6371,76 @@ DETAIL:  Key ("sensorID")=(1) already exists.
 : INSERT INTO "plants" ("sensorID", "name", "sci_name", "nickname", "zipcode", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "sensorID"):
   
 app/controllers/sensor/v1/plants_controller.rb:21:in `create'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-09 10:41:12 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 582ms (Views: 559.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-09 10:41:32 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fN1GcNQyZKfJgy51VMmBbiS5nKwMdCJwFKTQspQq+mScvkFfIif261HN1FRjrKTZ7UXXhpcG4Au/oHbDMiAgA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"placeholder", "zipcode"=>"94063", "notes"=>""}, "commit"=>"Save"}
+  [1m[36mPlant Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", nil], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "plants" ("sensorID", "name", "sci_name", "nickname", "zipcode", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "sensorID"[0m  [["sensorID", 1], ["name", "Basil"], ["sci_name", "Ocimum basilicum"], ["nickname", "placeholder"], ["zipcode", 94063], ["notes", ""], ["created_at", "2017-08-09 17:41:32.335391"], ["updated_at", "2017-08-09 17:41:32.335391"]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 6.6ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_plants_on_sensorID"
+DETAIL:  Key ("sensorID")=(1) already exists.
+: INSERT INTO "plants" ("sensorID", "name", "sci_name", "nickname", "zipcode", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "sensorID"):
+  
+app/controllers/sensor/v1/plants_controller.rb:27:in `create'
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-09 10:59:07 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fN1GcNQyZKfJgy51VMmBbiS5nKwMdCJwFKTQspQq+mScvkFfIif261HN1FRjrKTZ7UXXhpcG4Au/oHbDMiAgA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"placeholder", "zipcode"=>"94063", "notes"=>""}, "commit"=>"Save"}
+  [1m[36mPlant Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", nil], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-09 10:59:08 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 557ms (Views: 553.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-09 11:00:13 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fN1GcNQyZKfJgy51VMmBbiS5nKwMdCJwFKTQspQq+mScvkFfIif261HN1FRjrKTZ7UXXhpcG4Au/oHbDMiAgA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"placeholder", "zipcode"=>"94063", "notes"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/sensor/v1/plants_controller.rb:21:in `create'
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-09 11:01:42 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fN1GcNQyZKfJgy51VMmBbiS5nKwMdCJwFKTQspQq+mScvkFfIif261HN1FRjrKTZ7UXXhpcG4Au/oHbDMiAgA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"placeholder", "zipcode"=>"94063", "notes"=>""}, "commit"=>"Save"}
+Unpermitted parameters: :utf8, :authenticity_token, :plant, :commit
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-09 11:01:43 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 539ms (Views: 534.1ms | ActiveRecord: 0.0ms)
+
+
