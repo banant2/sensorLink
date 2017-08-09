@@ -1,6 +1,7 @@
 class CreatePlants < ActiveRecord::Migration[5.1]
   def change
-    create_table :plants do |t|
+
+    create_table :plants, id: false do |t|
       t.integer :sensorID, null: false
       t.string :name
       t.string :sci_name, null: false
@@ -10,5 +11,7 @@ class CreatePlants < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+
+    execute %Q{ ALTER TABLE "plants" ADD PRIMARY KEY ("sensorID"); }
   end
 end
