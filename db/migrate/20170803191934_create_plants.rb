@@ -2,6 +2,7 @@ class CreatePlants < ActiveRecord::Migration[5.1]
   def change
 
     create_table :plants, id: false do |t|
+      t.integer :owner_id
       t.integer :sensorID, null: false
       t.string :name
       t.string :sci_name, null: false

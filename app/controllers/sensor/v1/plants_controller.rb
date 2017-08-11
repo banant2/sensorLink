@@ -18,6 +18,7 @@ module Sensor
 
       def create
         @plant = Plant.new(plant_params)
+
         if @plant.save
           redirect_to root_path, notice: 'Plant Created Successfully'
         else
@@ -36,7 +37,7 @@ module Sensor
 
       private
       def plant_params
-        params.permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes)
+        params.require(:plant).permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes)
       end
     end
   end

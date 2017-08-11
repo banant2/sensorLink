@@ -5,4 +5,8 @@ class Plant < ApplicationRecord
   validates :sci_name, presence: true
   validates :zipcode, presence: true
 
+  belongs_to :owner, class_name: 'User'
+  validates :owner, presence: true
+  accepts_nested_attributes_for :owner
+
 end
