@@ -7322,3 +7322,1169 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 137ms (Views: 134.0ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-11 11:25:22 -0700
+  [1m[35m (22.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (11.1ms)
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1550ms (Views: 1445.4ms | ActiveRecord: 31.1ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 11:25:29 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (20.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 124ms (Views: 92.3ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 11:25:44 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o9uiSyqEETKbdSCSlom8Rj7sti3c8ykVPeZW0OsmcBDEaERSiHLL2gpDUz85+e4ERhJKSxajT97Q+zTIWFGEMg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (6.9ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 347ms (Views: 264.9ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 11:45:10 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q238Fe7uZeg+xzsJkTTnZdrEbkO5JxzGqGsERekQOtnM3hoMTBi/AK/xSKQ+RLUnojqSJXN3eg1FdmZdWmfO+w==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (23.3ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 248ms (Views: 191.2ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 11:45:23 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/OANp6ZH2zmLZXTTF0GCt/9uEfowVGr04HpzPhkgLQKbU+u+BLEB0RpTB364MdD1h5DtnPoEDD8NZxEmqlfZIA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 122ms (Views: 109.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 11:48:41 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cmWbdFPI57PeBa06eDzwDzRKWfmjTXOjglDRkC59xQkV1n1t8T49W08z3pfXTKJNTLSln2kdFWhvTbOInQoxKw==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `owner_id' for #<Sensor::V1::PlantsController:0x007fcf7e780ff0>):
+  
+app/controllers/sensor/v1/plants_controller.rb:40:in `plant_params'
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 11:49:19 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cmWbdFPI57PeBa06eDzwDzRKWfmjTXOjglDRkC59xQkV1n1t8T49W08z3pfXTKJNTLSln2kdFWhvTbOInQoxKw==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (17.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 663ms (Views: 581.4ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 12:01:57 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#index as HTML
+  [1m[36mPlant Load (4.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY sensorID DESC[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC
+                                                 ^
+HINT:  Perhaps you meant to reference the column "plants.sensorID".
+: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC):
+  
+app/controllers/sensor/v1/plants_controller.rb:7:in `index'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 12:02:12 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (17.9ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 659ms (Views: 625.7ms | ActiveRecord: 17.2ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 12:02:20 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"263fzm3i53yGk/k5bAE2ewHsbvJogy6ALb/CR56gXRS8HjnXzxQ9lBelipTDcWQ5eRKSlKLTSEvAoqBfLdepNg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (2.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 249ms (Views: 167.6ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 12:02:33 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ma9EOdArLF+SgpB/HBCBlisiCE41Y/anv7jEkvq2UAX+HKIgct32twO049KzYNPUU9z0KP8zkGxSpaaKScGkJw==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 104ms (Views: 92.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 12:07:41 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (27.1ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 658ms (Views: 615.3ms | ActiveRecord: 18.6ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 12:07:53 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kaov4VfiOslEojA9mYP9LkA/wzlAezEbwT4moEN53OhOGcn49RTgIdWUQ5A2869sOME/X4orV9AsI0S48A4oyg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (30.9ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (10.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (6.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 418ms (Views: 286.7ms | ActiveRecord: 43.3ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 12:18:21 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"as5YfWh9Pa+xTN6X1xsZCSpi+12T/wrW/V7Sv6aOx14Nfb5kyovnRyB6rTp4a0tLUpwHO1mvbB0QQ7CnFfkzfA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 400 Bad Request in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: {:account_attributes=>[:owner_id]}):
+  
+app/controllers/sensor/v1/plants_controller.rb:41:in `plant_params'
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 12:28:06 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:41: syntax error, unexpected ')', expecting keyword_end):
+  
+app/controllers/sensor/v1/plants_controller.rb:41: syntax error, unexpected ')', expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 12:28:09 -0700
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:41: syntax error, unexpected ')', expecting keyword_end):
+  
+app/controllers/sensor/v1/plants_controller.rb:41: syntax error, unexpected ')', expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 12:28:52 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (24.1ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 729ms (Views: 686.5ms | ActiveRecord: 19.4ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 12:28:59 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJ6+VP7DPLSu+EYOztYAZs4loR6y1RTK/N/DBPEAtZwDLVhNXDXmXD/ONaNhplIktttdeHiFcgERwqEcQndBvg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: account):
+  
+app/controllers/sensor/v1/plants_controller.rb:41:in `plant_params'
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 12:31:43 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (22.0ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 822ms (Views: 769.0ms | ActiveRecord: 25.7ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 12:31:54 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ep4Sigk+f9VWUiea/KMbtMkmgSSwpIj1mSc5WGU3TN11LfSTq8ilPcdkVDdT00n2sdh9Qnr07j50OltA1kC4/w==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: {:account=>[:owner_id]}):
+  
+app/controllers/sensor/v1/plants_controller.rb:41:in `plant_params'
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 15:25:07 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+        :owner_id = 1
+                   ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 15:25:09 -0700
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+        :owner_id = 1
+                   ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 15:25:59 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (28.8ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 653ms (Views: 605.0ms | ActiveRecord: 19.7ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 15:26:08 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/d8yP8JcGDT+/tLdz0izY6p1TpbVK3lr/L/a7LxHNqsRJrRXf+qiELNiObYTXCP9lcpXJEEyy5C751zAYbo+A==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: {:account=>[:owner_id]}):
+  
+app/controllers/sensor/v1/plants_controller.rb:41:in `plant_params'
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 15:26:48 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/d8yP8JcGDT+/tLdz0izY6p1TpbVK3lr/L/a7LxHNqsRJrRXf+qiELNiObYTXCP9lcpXJEEyy5C751zAYbo+A==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `owner_id=' for nil:NilClass):
+  
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started GET "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 16:35:18 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#index as HTML
+  [1m[36mPlant Load (4.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY sensorID DESC[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 4.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC
+                                                 ^
+HINT:  Perhaps you meant to reference the column "plants.sensorID".
+: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC):
+  
+app/controllers/sensor/v1/plants_controller.rb:7:in `index'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 16:35:21 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (15.8ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 643ms (Views: 607.2ms | ActiveRecord: 19.4ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 16:35:31 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"57AfcSmuO9PlqBcV1g9xSEgauU+oB2Cmpiwk+FWM6SCAA/loi1jhO3SeZLh5fyMKMORFKWJXBm1LMUbg5vsdAg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `owner_id=' for nil:NilClass):
+  
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 16:36:12 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"57AfcSmuO9PlqBcV1g9xSEgauU+oB2Cmpiwk+FWM6SCAA/loi1jhO3SeZLh5fyMKMORFKWJXBm1LMUbg5vsdAg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 400 Bad Request in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: {:account=>[:owner_id]}):
+  
+app/controllers/sensor/v1/plants_controller.rb:41:in `plant_params'
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:11:38 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        :owner_id= owner.owner_id
+                        ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:13:15 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        :owner_id= account(:owner_id)
+                          ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:13:44 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        :owner_id= account:(:owner_id)
+                          ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:16:59 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIVAR, expecting keyword_end
+        :owner_id= @account.try(:owner_id)
+                           ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIVAR, expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:17:26 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIVAR, expecting keyword_end
+        :owner_id= @user.try(:owner_id)
+                        ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected tIVAR, expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:18:32 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected keyword_self, expecting keyword_end
+        :owner_id= self.user.try(:owner_id)
+                       ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected keyword_self, expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:22:59 -0700
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected keyword_self, expecting keyword_end
+        :owner_id= self.owner.try(:owner_id)
+                       ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected keyword_self, expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:30:16 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+        :owner_id = self.owner.try(:owner_id)
+                   ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 18:53:20 -0700
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+        :owner_id = self.owner.try(:owner_id)
+                   ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 19:14:31 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+        :owner_id = @current_user.id
+                   ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '=', expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 19:15:22 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '(', expecting keyword_end
+        @plant(:owner_id) = @current_user.id
+               ^):
+  
+app/controllers/sensor/v1/plants_controller.rb:21: syntax error, unexpected '(', expecting keyword_end
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 19:16:29 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (42.8ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 911ms (Views: 781.9ms | ActiveRecord: 82.9ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 19:16:46 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lVCraCYX0jXuYAgs1L6oC3z5fT1thPVdKDbqyWShhZ3y401xhOEI3X9We4F7zvpJBAeBW6fUk5bFK4jR19Zxvw==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/sensor/v1/plants_controller.rb:21:in `create'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 19:32:10 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (27.8ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 696ms (Views: 636.5ms | ActiveRecord: 25.5ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 19:32:18 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VXzh6IWdPVMSmO/zx/6jcXss6jwuss/aPC2QMgZ4FkgyzwfxJ2vnu4OunF5ojvEzA9IWWuTiqRHRMPIqtQ/iag==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (30.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 330ms (Views: 167.6ms | ActiveRecord: 35.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-11 19:36:21 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qwoFWh0H28WbnS47sOo4K8ANcJjFgvxxFBbIf53migvMueNDv/EBLQqrXZYfmmppuPOM/g/Smrr5C6pnLpF+KQ=="}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (7.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 128ms (ActiveRecord: 52.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 19:36:21 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 631ms (Views: 628.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-11 19:36:26 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (116.9ms)
+Completed 200 OK in 257ms (Views: 253.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-11 19:36:47 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AJlnPbVi/397MqMcJiGJ7kZl2iu+KIjK0gCDfnK2ktsFVgUbbXGzBm1E6DcD9Y4Fw3MB1WjmYSY2H9HAdlY1zw==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 289ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 19:36:47 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 137.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-11 19:36:51 -0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 21ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 19:36:52 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 89.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 19:37:36 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (28.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 875ms (Views: 799.5ms | ActiveRecord: 73.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 19:37:39 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 404ms (Views: 400.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 19:39:25 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (154.3ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 889ms (Views: 836.6ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:47:48 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 633ms (Views: 617.3ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:47:54 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 91.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-11 20:47:57 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G1UAprKGwJNBla6bsJKgo7xgZaFlpeibob8zK08Qy3S9KVNXVScBVpOTER4TQv+lxNztjLyaJGSV0amFnjpWSw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:47:57 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 89ms (Views: 86.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 20:48:05 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 158ms (Views: 95.0ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-11 20:48:12 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 126ms (Views: 122.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-11 20:48:20 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6wiss0+C6NI8+6cNH3fzZ6W8Jn7NTeisW9o2dx7JriffEVVq9rlou2lYAvGf5EUnxhdK6qdA80La+HYqqUGTrg==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 236ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:48:20 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:49:00 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 586ms (Views: 571.6ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:49:05 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:49:41 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (15.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 113ms (Views: 110.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:49:55 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 106ms (Views: 104.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-11 20:49:56 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wRCqL+XTPFls0kCOhHFqfl93wfLdqXwy5nyp4GzQCXkGZAlz2Cq/A02Pwh31zWdYtYSxgr9OrqhqVMECirtiXA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:49:56 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 76ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-11 20:50:01 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 104ms (Views: 101.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-11 20:50:05 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qnTrfg86ZhRrtQ/BnBYyDHftK5Lq2PTYyGT3FI05O05XqEocj67K7dFtfOt8AvKfSj+pbVpVJ+ODjIOwAaw9tA==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 257ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:50:05 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 72.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 20:52:38 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 690ms (Views: 675.6ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 20:53:52 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (22.8ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 374ms (Views: 279.3ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 21:19:26 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (24.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 712ms (Views: 672.0ms | ActiveRecord: 18.1ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 21:19:50 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UgAgnxjc1x6Zr7eluXyLHHFNQaQrhWsucvfNgrhlxFRmhYTrDTVrZw574R4aXrUNymF6YhVEUsrDxZy81ga2Kg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/sensor/v1/plants_controller.rb:21:in `create'
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 21:20:43 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UgAgnxjc1x6Zr7eluXyLHHFNQaQrhWsucvfNgrhlxFRmhYTrDTVrZw574R4aXrUNymF6YhVEUsrDxZy81ga2Kg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (15.1ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 890ms (Views: 629.4ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 21:25:45 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (undefined local variable or method `session' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sensor/v1/plants_controller.rb:3:in `<module:V1>'
+app/controllers/sensor/v1/plants_controller.rb:2:in `<module:Sensor>'
+app/controllers/sensor/v1/plants_controller.rb:1:in `<top (required)>'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 21:27:14 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (undefined local variable or method `session' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sensor/v1/plants_controller.rb:3:in `<module:V1>'
+app/controllers/sensor/v1/plants_controller.rb:2:in `<module:Sensor>'
+app/controllers/sensor/v1/plants_controller.rb:1:in `<top (required)>'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 21:27:17 -0700
+  
+ActionController::RoutingError (undefined local variable or method `session' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sensor/v1/plants_controller.rb:3:in `<module:V1>'
+app/controllers/sensor/v1/plants_controller.rb:2:in `<module:Sensor>'
+app/controllers/sensor/v1/plants_controller.rb:1:in `<top (required)>'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 21:27:58 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (undefined local variable or method `session' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sensor/v1/plants_controller.rb:3:in `<module:V1>'
+app/controllers/sensor/v1/plants_controller.rb:2:in `<module:Sensor>'
+app/controllers/sensor/v1/plants_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-11 21:28:21 -0700
+  
+ActionController::RoutingError (undefined local variable or method `session' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/welcome_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-11 21:29:45 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 693ms (Views: 668.4ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 21:42:07 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (26.8ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 798ms (Views: 751.8ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 21:59:38 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GyRCp33eT4gWkHEl1e7uzcS3xCB5LjkSKpVOEIKUJHwvoebTaDfz8YFEJ552zNDcf5v/5kfvAPabpx8u7PdWAg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (13.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (22.3ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1639ms (Views: 1248.2ms | ActiveRecord: 47.5ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 22:07:09 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EzfNU8evEa7xGh0cIO6ifggmrdv445n0JVwwovtPMAwnsmkn0kat12bOS6eDzJxvswqWHcYioBCUbmGclSxCcg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (16.2ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 778ms (Views: 671.5ms | ActiveRecord: 19.3ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 22:39:12 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1lazV52toVbQU2HjA+/DfbbpSKQXAzD+ylgvkmHI5Fri0xcjiEQdL0eHN1igzf1sDcVzYinCCRp7an6sD6uWJA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (15.1ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 975ms (Views: 746.9ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 23:01:22 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#index as HTML
+  [1m[36mPlant Load (4.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY sensorID DESC[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC
+                                                 ^
+HINT:  Perhaps you meant to reference the column "plants.sensorID".
+: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC):
+  
+app/controllers/sensor/v1/plants_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:01:38 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 814ms (Views: 766.2ms | ActiveRecord: 43.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:08:48 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 712ms (Views: 681.1ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:09:53 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 679ms (Views: 557.1ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:14:49 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (29.3ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 811ms (Views: 764.7ms | ActiveRecord: 18.9ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 23:15:01 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QzI7j2F5sA+nbJsTgd+rAkqfET30txGox0sQQ3/Y5+Z3t5/7dJAMdjC4zagi/ZUT8bMq+8p2KEx2eUF9EbuVmA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 429ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `active_user' for #<Sensor::V1::PlantsController:0x007fe40a484928>):
+  
+app/controllers/sensor/v1/plants_controller.rb:21:in `create'
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:17:19 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 681ms (Views: 663.9ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:24:36 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (26.5ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 761ms (Views: 570.2ms | ActiveRecord: 20.8ms)
+
+
+  
+NoMethodError (undefined method `set_page' for #<Sensor::V1::PlantsController:0x007fa01fbe37e8>
+Did you mean?  set_variables):
+  
+activesupport (5.1.2) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.2) lib/active_support/callbacks.rb:246:in `block in halting'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `block in invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `each'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:24:49 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 180ms (Views: 57.5ms | ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `set_page' for #<WelcomeController:0x007fa0192c0e28>
+Did you mean?  set_variables):
+  
+activesupport (5.1.2) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.2) lib/active_support/callbacks.rb:246:in `block in halting'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `block in invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `each'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:27:00 -0700
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (undefined method `before_filters' for ApplicationController:Class
+Did you mean?  before_action):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/welcome_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:29:01 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (undefined method `before_filter' for ApplicationController:Class
+Did you mean?  before_action):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/welcome_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:29:37 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:5:in `set_variables'
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:31:51 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 618ms (Views: 574.3ms | ActiveRecord: 41.0ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:32:25 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (30.4ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 708ms (Views: 651.1ms | ActiveRecord: 21.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 23:32:38 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 73.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:32:48 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 162ms (Views: 159.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 23:32:56 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7CwM1NHMzr67rb3uKUVsZynNQarPo5XL8Q/h7gdi/9rYqaigxCVyxyx561WKZ1J2kuF6bPFirC9APbDQaQGNpA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (11.8ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 178ms (Views: 99.5ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 23:33:31 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#index as HTML
+  [1m[36mPlant Load (7.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY sensorID DESC[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 7.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC
+                                                 ^
+HINT:  Perhaps you meant to reference the column "plants.sensorID".
+: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC):
+  
+app/controllers/sensor/v1/plants_controller.rb:7:in `index'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:33:35 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (20.0ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 646ms (Views: 583.7ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:34:43 -0700
+  [1m[35m (10.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (25.7ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 659ms (Views: 610.5ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:38:24 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:5:in `set_variables'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:40:03 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:5:in `set_variables'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-11 23:40:45 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (29.2ms)
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 606ms (Views: 553.9ms | ActiveRecord: 23.3ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-11 23:41:07 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z9i9ElcWk/Tas0CnKECKBNNhYDNjAGGL/Jt0Tj2Kysr7XRlmQv8vjU1nFhyLYrQVaE1b9V3BWG9NqSVwU+m4tA==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>""}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 188.6ms | ActiveRecord: 3.7ms)
+
+

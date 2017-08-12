@@ -9,6 +9,8 @@ module Sensor
 
       def new
         @plant = Plant.new
+        pp @active_user
+        pp 'active_user'
       end
 
       def show
@@ -18,15 +20,18 @@ module Sensor
 
       def create
         @plant = Plant.new(plant_params)
+        pp @active_user
+      #  @plant.owner_id = @active_user
 
         if @plant.save
           redirect_to root_path, notice: 'Plant Created Successfully'
         else
-          redirect_to root_path, notice: 'SensorID already exists'
+          render action: 'new'
         end
       end
 
       def update
+
         @plant = Plant.find(params[:sensorID])
         if plant.update_attributes(plant_params)
             redirect_to sensor_v1_plant_path, notice: 'Plant Updated Successfully'
