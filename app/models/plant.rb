@@ -7,5 +7,6 @@ class Plant < ApplicationRecord
   validates :sensorID, presence: true, uniqueness:{ message: 'Error: cannot save, sensorID is already registered' }
   validates :sci_name, presence: true
   validates :zipcode, presence: true
-
+  validates :owner_id, presence: true
+  
 end

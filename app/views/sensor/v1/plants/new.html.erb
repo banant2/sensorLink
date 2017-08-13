@@ -45,6 +45,12 @@
       </div>
     <% end %>
 
+    <%= form_for f, :owner_id, label: false do|f| %>
+      <div class ="actions">
+        <%= f.hidden_field :owner_id, :value => @user.id %>
+      </div>
+    <% end %>
+
     <div><%= f.submit "Save", method: 'create', class: 'btn btn-primary btn-block btn-lg' %></div>
   <% end %>
 

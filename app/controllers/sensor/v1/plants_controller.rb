@@ -9,8 +9,7 @@ module Sensor
 
       def new
         @plant = Plant.new
-        pp @active_user
-        pp 'active_user'
+
       end
 
       def show
@@ -19,9 +18,8 @@ module Sensor
       end
 
       def create
+        @user = current_user
         @plant = Plant.new(plant_params)
-        pp @active_user
-      #  @plant.owner_id = @active_user
 
         if @plant.save
           redirect_to root_path, notice: 'Plant Created Successfully'
@@ -42,7 +40,7 @@ module Sensor
 
       private
       def plant_params
-        params.require(:plant).permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes)
+        params.require(:plant).permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes, :owner_id)
       end
     end
   end
