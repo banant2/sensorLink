@@ -1,6 +1,5 @@
 class Plant < ApplicationRecord
-  belongs_to :user
-  validates :user, presence: true
+  belongs_to :user, optional: true
   accepts_nested_attributes_for :user
 
   self.primary_key= 'sensorID'
@@ -8,5 +7,5 @@ class Plant < ApplicationRecord
   validates :sci_name, presence: true
   validates :zipcode, presence: true
   validates :owner_id, presence: true
-  
+
 end

@@ -10009,3 +10009,257 @@ ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2))
   
 app/views/sensor/v1/plants/new.html.erb:48:in `block in _app_views_sensor_v__plants_new_html_erb__3327213911958213811_70161267054500'
 app/views/sensor/v1/plants/new.html.erb:4:in `_app_views_sensor_v__plants_new_html_erb__3327213911958213811_70161267054500'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-13 00:04:50 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (64.7ms)
+Completed 200 OK in 6386ms (Views: 6343.3ms | ActiveRecord: 19.4ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:05:12 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OaA3D5TOoQ4Mrdz6ZHiwyvRPnSZ5N5FRb/z8wD57MIublwXvWVCHWxqunsIS4p16Mj+jM+MmgskN5h8SHVQ0Jg==", "plant"=>{"sensorID"=>"1", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (6.8ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 417ms (Views: 340.3ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:08:03 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"audLGb9CTg+jqVCaZfwAyXvERnnzXEzarniV8/XlrH7I0Hn5ctxoWrWqEqITZi15vbR4bGlNX0LMYnYh1sqo0w==", "plant"=>{"sensorID"=>"2", "name"=>"Basil", "sci_name"=>"Ocimum basilicum", "nickname"=>"", "zipcode"=>"60660", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 659ms (Views: 586.3ms | ActiveRecord: 4.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-13 00:10:59 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Z88F+TWUeTaw2dcc+Z3DFBe2l5de2AR3kUyyJTdx9dLF+DcZ+ApfY6balSSPB+6k0capgsTJF+/zVlH3FF7xfw=="}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-13 00:10:59 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 426ms (Views: 423.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-13 00:11:03 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    47: 
+    48: 
+    49:       <div class ="actions">
+    50:         <%= f.hidden_field :owner_id, :value => current_user.id %>
+    51:       </div>
+    52: 
+    53: 
+  
+app/views/sensor/v1/plants/new.html.erb:50:in `block in _app_views_sensor_v__plants_new_html_erb__2008640018542266435_70282259592900'
+app/views/sensor/v1/plants/new.html.erb:4:in `_app_views_sensor_v__plants_new_html_erb__2008640018542266435_70282259592900'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-13 00:11:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 360ms (Views: 354.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-13 00:11:25 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"405KiNPViPSqosKD+/U07L04xp7t4YKT4DX/LCR7DvhiMnSX+K3sBBdW+tyvAgM/MMjXkeM9rdGQBv9dgkA3Iw==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 233ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-13 00:11:25 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 225ms (Views: 222.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-13 00:11:29 -0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-13 00:11:29 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 198ms (Views: 194.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-13 00:11:33 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 187ms (Views: 182.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:11:44 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fw0YldI2yDjmCEUKY6mnq+sBlh94yOpWJyku/Y1d+Yag1Z7pSJ3R47CxGe0DA5OBLqujLRfxVu2smED4mTHyBw==", "plant"=>{"sensorID"=>"234", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (9.4ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 234], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 382ms (Views: 341.0ms | ActiveRecord: 15.3ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:18:31 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SuNe/kZ0AH8KvoWa3QSRgkA49efbh0vR/+0dAyOv7l39O9iC3N8ZpFwH2X29rqWohZLA1bS+92p0XHMGN8Pl3A==", "plant"=>{"sensorID"=>"234", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 234], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 869ms (Views: 782.0ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:23:30 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ubjOoh+CqO8Qbc0FVZWhqu1vhvusKzdcZH+6rrtnZdBPmVGEtUTeOr469N1/GKsbh+LKYGJEGb6IJDvroGWFg==", "plant"=>{"sensorID"=>"234", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 234], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 1185ms (Views: 1091.5ms | ActiveRecord: 15.4ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:24:13 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OG7ilAtm92aU2l/NwUIge/zARRCNIHlueD4OtwVB9fmPtmTokc3uvcJjAyqh6BRROWpwIuIZxdXzj2CyES3+eA==", "plant"=>{"sensorID"=>"234", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.5ms)[0m  [1m[32mINSERT INTO "plants" ("sensorID", "name", "sci_name", "nickname", "zipcode", "notes", "created_at", "updated_at", "owner_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)[0m  [["sensorID", 234], ["name", "Sample Name"], ["sci_name", "sequoia sempervirens"], ["nickname", ""], ["zipcode", 60611], ["notes", ""], ["created_at", "2017-08-13 07:24:13.174070"], ["updated_at", "2017-08-13 07:24:13.174070"], ["owner_id", 1]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-13 00:24:13 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 667ms (Views: 655.6ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:24:49 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OG7ilAtm92aU2l/NwUIge/zARRCNIHlueD4OtwVB9fmPtmTokc3uvcJjAyqh6BRROWpwIuIZxdXzj2CyES3+eA==", "plant"=>{"sensorID"=>"233", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 233], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "plants" ("sensorID", "name", "sci_name", "nickname", "zipcode", "notes", "created_at", "updated_at", "owner_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "sensorID"[0m  [["sensorID", 233], ["name", "Sample Name"], ["sci_name", "sequoia sempervirens"], ["nickname", ""], ["zipcode", 60611], ["notes", ""], ["created_at", "2017-08-13 07:24:49.844204"], ["updated_at", "2017-08-13 07:24:49.844204"], ["owner_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-13 00:24:49 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 804ms (Views: 788.3ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:25:16 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OG7ilAtm92aU2l/NwUIge/zARRCNIHlueD4OtwVB9fmPtmTokc3uvcJjAyqh6BRROWpwIuIZxdXzj2CyES3+eA==", "plant"=>{"sensorID"=>"232", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 232], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (43.2ms)
+Completed 200 OK in 810ms (Views: 727.5ms | ActiveRecord: 17.8ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:25:58 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCcpoSOgOZTw7BWP8OkN/Txq7fqIvikjfizWGi81YzfT/6/duQsgT6ZVSWiQQznX+cDYyOeHlZj1nbgfO1lotg==", "plant"=>{"sensorID"=>"232", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 232], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 735ms (Views: 645.7ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:32:43 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KWVTLBae9urdo8V5wnvWEcbuJZ7uaXWrwiS9Yx5dIfGevdVQjDXvMYsamZ6i0eI7A0QQrIFQyRBJldNmCjEqcA==", "plant"=>{"sensorID"=>"231", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 4.7ms)
+
+
+  
+NoMethodError (undefined method `vaccepts_nested_attributes_for' for #<Class:0x007ff597f42ab0>
+Did you mean?  accepts_nested_attributes_for):
+  
+app/models/plant.rb:3:in `<class:Plant>'
+app/models/plant.rb:1:in `<top (required)>'
+app/controllers/sensor/v1/plants_controller.rb:20:in `create'
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-13 00:33:05 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KWVTLBae9urdo8V5wnvWEcbuJZ7uaXWrwiS9Yx5dIfGevdVQjDXvMYsamZ6i0eI7A0QQrIFQyRBJldNmCjEqcA==", "plant"=>{"sensorID"=>"231", "name"=>"Sample Name", "sci_name"=>"sequoia sempervirens", "nickname"=>"", "zipcode"=>"60611", "notes"=>"", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 231], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "plants" ("sensorID", "name", "sci_name", "nickname", "zipcode", "notes", "created_at", "updated_at", "owner_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "sensorID"[0m  [["sensorID", 231], ["name", "Sample Name"], ["sci_name", "sequoia sempervirens"], ["nickname", ""], ["zipcode", 60611], ["notes", ""], ["created_at", "2017-08-13 07:33:05.285940"], ["updated_at", "2017-08-13 07:33:05.285940"], ["owner_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 57ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-13 00:33:05 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 747ms (Views: 731.6ms | ActiveRecord: 12.8ms)
+
+

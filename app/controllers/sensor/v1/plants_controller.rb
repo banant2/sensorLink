@@ -9,7 +9,6 @@ module Sensor
 
       def new
         @plant = Plant.new
-
       end
 
       def show
@@ -18,7 +17,6 @@ module Sensor
       end
 
       def create
-        @user = current_user
         @plant = Plant.new(plant_params)
 
         if @plant.save
