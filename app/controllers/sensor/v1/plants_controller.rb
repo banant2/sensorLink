@@ -1,6 +1,7 @@
 module Sensor
   module V1
     class PlantsController < ApplicationController
+      before_action :require_login
 
       def index
         @plant = Plant.order('sensorID DESC');
@@ -37,8 +38,14 @@ module Sensor
       end
 
       private
-      def plant_params
-        params.require(:plant).permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes, :owner_id)
+        def require_login
+          unless current_user
+          redirect_to new_user_session_path
+        end
+
+        def plant_params
+          params.require(:plant).permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes, :owner_id)
+        end
       end
     end
   end
