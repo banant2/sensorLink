@@ -1,5 +1,10 @@
 SensorLink::Application.routes.draw do
   devise_for :users
+
+  authenticated :user do
+    root "welcome#dashboard", as: :authenticated_root
+  end
+
   root "welcome#index"
   resources :accounts
 
