@@ -12,13 +12,21 @@
 
 <header class="container">
     <nav class="navbar navbar-default">
-      <div class="navbar-header">
-        <%= link_to 'Green Thumb', root_path, class: 'navbar-brand' %>
-      </div>
-      <div class="pull-right right-buttons">
-        <% if user_signed_in? %>
-          <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn' %>
-        <% end %>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to 'Green Thumb', root_path, class: 'navbar-brand' %>
+        </div>
+        <div class="pull-right right-buttons">
+          <% if user_signed_in? %>
+            <ul class="nav navbar-nav">
+                <li><a href="/sensor/v1/plants/new">New Plant</a></li>
+            </ul>
+            <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn' %>
+          <% else %>
+            <%= link_to 'Sign in', new_user_session_path, method: 'get', class: 'btn btn-default navbar-btn' %>
+          <% end %>
+
+        </div>
       </div>
       <% session.inspect %>
     </nav>
