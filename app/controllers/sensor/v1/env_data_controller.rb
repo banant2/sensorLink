@@ -1,14 +1,15 @@
 module Sensor
   module V1
     class EnvDataController < ActionController::Base
+      before_action :require_login
+
       def index
         env_data = EnvDatum.order('record_time DESC');
         render json: {status: 'SUCCESS', message: 'loaded data', data: env_data}, status: :ok
       end
 
       def show
-        env_datum = EnvDatum.find(params[:id])
-        render json: {status: 'SUCCESS', message: 'loaded datum', data: env_datum}, status: :ok
+        env_data = EnvDatum.where(sensorID: params[:sensorID])
       end
 
       def create

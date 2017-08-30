@@ -40,5 +40,9 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 2.0'
 
   gem 'rails-controller-testing', '0.1.1'
+  #creates data charts
+  gem 'chartkick'
+  #provides time based data grouping
+  gem 'groupdate'
 
   end

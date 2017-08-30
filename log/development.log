@@ -11458,3 +11458,1468 @@ Processing by WelcomeController#dashboard as HTML
 Completed 200 OK in 847ms (Views: 843.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-27 12:15:16 -0700
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 786ms (Views: 782.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-27 12:15:32 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-27 12:15:32 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 358ms (Views: 319.7ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-27 12:18:36 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 669ms (Views: 667.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-27 12:18:39 -0700
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"K49PI7mmphu63fLZ/86tR8nQGF1NZPjhLyOZMM0iO2DEe3qJx77kGO2PCdA5IMk+Ba9UDG98bgq1cR80SKpvpg=="}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 308ms (Views: 276.8ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-27 12:18:43 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CIP0i1tPKiLyTeErnpVNZIGoXMECKAei1ZWV9H6cQ1Dnd8EhJVdoIaUfGiJYeykdTdcQkCAwkUlPxxPw+xQXlg==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 254ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-27 12:18:44 -0700
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 312ms (Views: 310.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-27 13:01:56 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 776ms (Views: 773.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/env_data/show:1" for 127.0.0.1 at 2017-08-27 13:02:17 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"show:1"}
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 30ms (ActiveRecord: 8.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/show/1" for 127.0.0.1 at 2017-08-27 13:02:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sensor/v1/env_data/show/1"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sensor/v1/env_data/show/:1" for 127.0.0.1 at 2017-08-27 13:03:15 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sensor/v1/env_data/show/:1"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:03:52 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/:1" for 127.0.0.1 at 2017-08-27 13:04:25 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>":1"}
+  [1m[36mEnvDatum Load (0.4ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:04:30 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEnvDatum Load (0.4ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/" for 127.0.0.1 at 2017-08-27 13:04:40 -0700
+Processing by Sensor::V1::EnvDataController#index as HTML
+  [1m[36mEnvDatum Load (1.3ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" ORDER BY record_time DESC[0m
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/sensor/v1/env_data/:1" for 127.0.0.1 at 2017-08-27 13:04:46 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>":1"}
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/show/:1" for 127.0.0.1 at 2017-08-27 13:04:53 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sensor/v1/env_data/show/:1"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sensor/v1/env_data" for 127.0.0.1 at 2017-08-27 13:07:29 -0700
+Processing by Sensor::V1::EnvDataController#index as HTML
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" ORDER BY record_time DESC[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:11:24 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEnvDatum Load (0.8ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 1.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/sensor/v1/env_data/show/1" for 127.0.0.1 at 2017-08-27 13:11:40 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sensor/v1/env_data/show/1"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sensor/v1/env_data/show:1" for 127.0.0.1 at 2017-08-27 13:12:31 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"show:1"}
+  [1m[36mEnvDatum Load (0.6ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=show:1):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/show/:1" for 127.0.0.1 at 2017-08-27 13:12:42 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sensor/v1/env_data/show/:1"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:20:43 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEnvDatum Load (0.6ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 24ms (ActiveRecord: 9.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:33:27 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `id' for #<Sensor::V1::EnvDataController:0x007fb71e1af108>):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:34:09 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data" for 127.0.0.1 at 2017-08-27 13:34:24 -0700
+Processing by Sensor::V1::EnvDataController#index as HTML
+  [1m[36mEnvDatum Load (1.4ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" ORDER BY record_time DESC[0m
+Completed 200 OK in 24ms (Views: 12.4ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/sensor/v1/env_data/0" for 127.0.0.1 at 2017-08-27 13:34:28 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"0"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/" for 127.0.0.1 at 2017-08-27 13:34:33 -0700
+Processing by Sensor::V1::EnvDataController#index as HTML
+  [1m[36mEnvDatum Load (0.8ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" ORDER BY record_time DESC[0m
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:34:36 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:35:06 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:35:25 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:50:09 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 13:59:09 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:03:21 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:03:23 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:03:45 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:04:24 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (1.2ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 1.6ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:05:44 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/" for 127.0.0.1 at 2017-08-27 14:05:58 -0700
+Processing by Sensor::V1::EnvDataController#index as HTML
+  [1m[36mEnvDatum Load (1.9ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" ORDER BY record_time DESC[0m
+Completed 200 OK in 33ms (Views: 17.5ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:24:18 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:31:58 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:32:36 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.9ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 1.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-27 14:34:43 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (2.3ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."id" IN (NULL, 1)[0m
+Completed 404 Not Found in 28ms (ActiveRecord: 11.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all EnvData with 'id': (all, 1) (found 1 results, but was looking for 2)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/0" for 127.0.0.1 at 2017-08-29 11:20:48 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"0"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unsupported argument type: all (Symbol)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 11:20:54 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unsupported argument type: all (Symbol)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 11:22:26 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (12.6ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE (1)[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 12.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "env_data".* FROM "env_data" WHERE (1)
+                                                   ^
+: SELECT "env_data".* FROM "env_data" WHERE (1)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:11:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 11:25:41 -0700
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (2.1ms)[0m  [1m[34mSELECT "all", 1 FROM "env_data"[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 10.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "all" does not exist
+LINE 1: SELECT "all", 1 FROM "env_data"
+               ^
+: SELECT "all", 1 FROM "env_data"):
+  
+app/controllers/sensor/v1/env_data_controller.rb:11:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 11:26:15 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.9ms)[0m  [1m[34mSELECT 1 FROM "env_data"[0m
+Completed 200 OK in 44ms (Views: 14.7ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 11:29:55 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (2.1ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')
+                                                   ^
+HINT:  Perhaps you meant to reference the column "env_data.sensorID".
+: SELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')):
+  
+app/controllers/sensor/v1/env_data_controller.rb:11:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 11:32:33 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (2.1ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE (sensorID = 1)[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "env_data".* FROM "env_data" WHERE (sensorID = 1)
+                                                   ^
+HINT:  Perhaps you meant to reference the column "env_data.sensorID".
+: SELECT "env_data".* FROM "env_data" WHERE (sensorID = 1)):
+  
+app/controllers/sensor/v1/env_data_controller.rb:11:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 11:33:21 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `env_datum' for #<Sensor::V1::EnvDataController:0x007f8fbdde33f8>
+Did you mean?  env_data):
+  
+app/controllers/sensor/v1/env_data_controller.rb:11:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 11:34:20 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (2.1ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')
+                                                   ^
+HINT:  Perhaps you meant to reference the column "env_data.sensorID".
+: SELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')):
+  
+app/controllers/sensor/v1/env_data_controller.rb:11:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:07:42 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `sensorID=' for nil:NilClass):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:08:25 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `sensorID' for nil:NilClass):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:26:23 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (2.1ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')
+                                                   ^
+HINT:  Perhaps you meant to reference the column "env_data.sensorID".
+: SELECT "env_data".* FROM "env_data" WHERE (sensorID = '1')):
+  
+app/controllers/sensor/v1/env_data_controller.rb:11:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:37:34 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (4.2ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data"[0m
+Completed 200 OK in 34ms (Views: 15.1ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:38:43 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (2.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 26ms (ActiveRecord: 11.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=all):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:39:18 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.9ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 1.1ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:40:02 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (2.2ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 23ms (ActiveRecord: 10.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data" for 127.0.0.1 at 2017-08-29 12:40:27 -0700
+Processing by Sensor::V1::EnvDataController#index as HTML
+  [1m[36mEnvDatum Load (1.1ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" ORDER BY record_time DESC[0m
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/sensor/v1/env_data/4" for 127.0.0.1 at 2017-08-29 12:41:39 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"4"}
+  [1m[36mEnvDatum Load (0.6ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/0" for 127.0.0.1 at 2017-08-29 12:41:46 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"0"}
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/0" for 127.0.0.1 at 2017-08-29 12:41:49 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"0"}
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:41:54 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:41:59 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.6ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/" for 127.0.0.1 at 2017-08-29 12:42:27 -0700
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 656ms (Views: 653.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-29 12:42:31 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 366ms (Views: 320.9ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-08-29 12:42:42 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jI9+cAj+9kDHiv+5snU85Nl5x87Y0pnKPvv51RTfWOsGFuapV4tQw9V0atVfQgyJQwto2D+6J8g95+C7R5VcDQ==", "plant"=>{"sensorID"=>"2", "name"=>"asdf", "sci_name"=>"adfs", "nickname"=>"afd", "zipcode"=>"123456", "notes"=>"234", "owner_id"=>"1"}, "commit"=>"Save"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensorID" = $1 LIMIT $2[0m  [["sensorID", 2], ["LIMIT", 1]]
+  [1m[35mSQL (15.3ms)[0m  [1m[32mINSERT INTO "plants" ("sensorID", "name", "sci_name", "nickname", "zipcode", "notes", "created_at", "updated_at", "owner_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "sensorID"[0m  [["sensorID", 2], ["name", "asdf"], ["sci_name", "adfs"], ["nickname", "afd"], ["zipcode", 123456], ["notes", "234"], ["created_at", "2017-08-29 19:42:42.486107"], ["updated_at", "2017-08-29 19:42:42.486107"], ["owner_id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-29 12:42:42 -0700
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 505ms (Views: 502.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:42:48 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:42:57 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/2" for 127.0.0.1 at 2017-08-29 12:43:10 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"2"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/2" for 127.0.0.1 at 2017-08-29 12:43:13 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"2"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:43:17 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:43:19 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.3ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:43:44 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 1.1ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/sensor/v1/env_data/2" for 127.0.0.1 at 2017-08-29 12:43:49 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"2"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:44:40 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (1.6ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 1.6ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:44:43 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sensor/v1/env_data/2" for 127.0.0.1 at 2017-08-29 12:44:48 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"2"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/2" for 127.0.0.1 at 2017-08-29 12:49:13 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 27ms (ActiveRecord: 10.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EnvDatum with 'id'=2):
+  
+app/controllers/sensor/v1/env_data_controller.rb:10:in `show'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:51:58 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.8ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 2]]
+Completed 200 OK in 12ms (Views: 1.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:53:12 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.9ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 1]]
+Completed 200 OK in 27ms (Views: 2.3ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 12:54:13 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (1.1ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 1]]
+Completed 200 OK in 26ms (Views: 10.8ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/sensor/v1/env_data/2" for 127.0.0.1 at 2017-08-29 12:54:18 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"2"}
+  [1m[36mEnvDatum Load (0.5ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 2]]
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sensor/v1/env_data" for 127.0.0.1 at 2017-08-29 13:01:26 -0700
+Processing by Sensor::V1::EnvDataController#create as */*
+  Parameters: {"sensorID"=>2, "temp"=>68, "soil_conduct"=>950, "light"=>10, "env_datum"=>{"sensorID"=>2, "temp"=>68, "soil_conduct"=>950, "light"=>10}}
+Unpermitted parameter: :env_datum
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "env_data" ("sensorID", "temp", "soil_conduct", "light") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sensorID", 2], ["temp", 68], ["soil_conduct", 950], ["light", 10]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 26ms (Views: 1.0ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/sensor/v1/env_data" for 127.0.0.1 at 2017-08-29 13:01:31 -0700
+Processing by Sensor::V1::EnvDataController#create as */*
+  Parameters: {"sensorID"=>2, "temp"=>68, "soil_conduct"=>9120, "light"=>10, "env_datum"=>{"sensorID"=>2, "temp"=>68, "soil_conduct"=>9120, "light"=>10}}
+Unpermitted parameter: :env_datum
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "env_data" ("sensorID", "temp", "soil_conduct", "light") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sensorID", 2], ["temp", 68], ["soil_conduct", 9120], ["light", 10]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/sensor/v1/env_data" for 127.0.0.1 at 2017-08-29 13:01:34 -0700
+Processing by Sensor::V1::EnvDataController#create as */*
+  Parameters: {"sensorID"=>2, "temp"=>68, "soil_conduct"=>9120, "light"=>12, "env_datum"=>{"sensorID"=>2, "temp"=>68, "soil_conduct"=>9120, "light"=>12}}
+Unpermitted parameter: :env_datum
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "env_data" ("sensorID", "temp", "soil_conduct", "light") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sensorID", 2], ["temp", 68], ["soil_conduct", 9120], ["light", 12]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/sensor/v1/env_data" for 127.0.0.1 at 2017-08-29 13:01:43 -0700
+Processing by Sensor::V1::EnvDataController#create as */*
+  Parameters: {"sensorID"=>2, "temp"=>68, "soil_conduct"=>9120, "light"=>12, "env_datum"=>{"sensorID"=>2, "temp"=>68, "soil_conduct"=>9120, "light"=>12}}
+Unpermitted parameter: :env_datum
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "env_data" ("sensorID", "temp", "soil_conduct", "light") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sensorID", 2], ["temp", 68], ["soil_conduct", 9120], ["light", 12]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/sensor/v1/env_data/2" for 127.0.0.1 at 2017-08-29 13:01:51 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"2"}
+  [1m[36mEnvDatum Load (0.8ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 2]]
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sensor/v1/env_data/show" for 127.0.0.1 at 2017-08-29 13:17:54 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"show"}
+  [1m[36mEnvDatum Load (1.4ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 0]]
+Completed 200 OK in 28ms (Views: 17.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/sensor/v1/env_data/show/1" for 127.0.0.1 at 2017-08-29 13:18:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sensor/v1/env_data/show/1"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sensor/v1/env_data/show" for 127.0.0.1 at 2017-08-29 13:18:09 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"show"}
+  [1m[36mEnvDatum Load (0.6ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 0]]
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sensor/v1/env_data/" for 127.0.0.1 at 2017-08-29 13:18:11 -0700
+Processing by Sensor::V1::EnvDataController#index as HTML
+  [1m[36mEnvDatum Load (3.0ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" ORDER BY record_time DESC[0m
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 13:18:15 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (0.9ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 1]]
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/sensor/v1/plants" for 127.0.0.1 at 2017-08-29 13:19:03 -0700
+Processing by Sensor::V1::PlantsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (2.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" ORDER BY sensorID DESC[0m
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 16.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "sensorid" does not exist
+LINE 1: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC
+                                                 ^
+HINT:  Perhaps you meant to reference the column "plants.sensorID".
+: SELECT "plants".* FROM "plants" ORDER BY sensorID DESC):
+  
+app/controllers/sensor/v1/plants_controller.rb:8:in `index'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-29 13:19:07 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 805ms (Views: 769.4ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/sensor/v1/env_data/showing" for 127.0.0.1 at 2017-08-29 13:22:04 -0700
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"showing"}
+  [1m[36mEnvDatum Load (1.0ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 0]]
+Completed 200 OK in 14ms (Views: 1.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 13:44:40 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  [1m[36mEnvDatum Load (1.6ms)[0m  [1m[34mSELECT "env_data".* FROM "env_data" WHERE "env_data"."sensorID" = $1[0m  [["sensorID", 1]]
+Completed 200 OK in 31ms (Views: 13.8ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-08-29 13:45:20 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 842ms (Views: 775.6ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 13:48:54 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (392.7ms)
+Completed 500 Internal Server Error in 416ms (ActiveRecord: 3.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `env_data' for #<#<Class:0x007f9455382188>:0x007f94554041d8>):
+    1: <div class="col-md-4 col-md-offset-4 Plant Information">
+    2:   <h2>Plant Status for <%= env_data.name %></h2>
+    3: 
+    4: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:2:in `_app_views_sensor_v__env_data_show_html_erb__3506736484853805213_70137530816880'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 13:50:52 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (386.8ms)
+Completed 500 Internal Server Error in 420ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `plants' for #<#<Class:0x007fb2f3db2100>:0x007fb2f07b7e10>):
+    1: <div class="col-md-4 col-md-offset-4 Plant Information">
+    2:   <h2>Plant Status for <%= plants.name %></h2>
+    3: 
+    4: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:2:in `_app_views_sensor_v__env_data_show_html_erb__4034121895229268795_70203286068200'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 13:52:03 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (388.5ms)
+Completed 500 Internal Server Error in 413ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `env_data' for #<#<Class:0x007fd69b5a7570>:0x007fd69c0a4e50>):
+    1: <div class="col-md-4 col-md-offset-4 Plant Information">
+    2:   <h2>Plant Status for <%= env_data.sensorID %></h2>
+    3: 
+    4: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:2:in `_app_views_sensor_v__env_data_show_html_erb__1987048086977227641_70279858807800'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 13:53:34 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (2.0ms)
+Completed 200 OK in 33ms (Views: 17.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 13:55:37 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (0.5ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 14:04:57 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (7.1ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `sensorID' for nil:NilClass):
+    1: <div class="col-md-4 col-md-offset-4 Plant Information">
+    2:   <h2>Plant Status for <%= @env_data.sensorID %></h2>
+    3: 
+    4: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:2:in `_app_views_sensor_v__env_data_show_html_erb___2109835539216528854_70201516524760'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 14:11:06 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (0.9ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.7ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:11: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:13: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/sensor/v1/env_data/show.html.erb:11: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/sensor/v1/env_data/show.html.erb:13: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 14:14:42 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (5.6ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <div class="col-md-4 col-md-offset-4 Plant Information">
+    2:   <% @env_data.each do |env_datum| %>
+    3:     <tr>
+    4:       <td><%= env_datum.sensorID %></td>
+    5:     </tr>
+  
+app/views/sensor/v1/env_data/show.html.erb:2:in `_app_views_sensor_v__env_data_show_html_erb___1416543687424598130_70294763678480'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 16:10:41 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (9.3ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 17.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    2: 
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4: 
+    5:   <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    6:   
+    7: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:5:in `_app_views_sensor_v__env_data_show_html_erb__3625819897029245345_70150050336440'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 16:14:16 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (11.8ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 15.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    2: 
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4: 
+    5:   <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    6:   
+    7: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:5:in `_app_views_sensor_v__env_data_show_html_erb__3665908747764955375_70148643625940'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:25:06 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (11.4ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    2: 
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4: 
+    5:   <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    6:   
+    7: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:5:in `_app_views_sensor_v__env_data_show_html_erb__3665908747764955375_70148687585240'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:25:33 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (9.0ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    2: 
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4: 
+    5:   <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    6:   
+    7: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:5:in `_app_views_sensor_v__env_data_show_html_erb__1076722058904483420_70251798903920'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:25:39 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (5.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    2: 
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4: 
+    5:   <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    6:   
+    7: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:5:in `_app_views_sensor_v__env_data_show_html_erb__1076722058904483420_70251795179180'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:29:59 -0700
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (13.3ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    2: 
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4: 
+    5:   <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    6:   
+    7: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:5:in `_app_views_sensor_v__env_data_show_html_erb___243957786830168942_70366700159380'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:30:01 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (4.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    2: 
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4: 
+    5:   <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    6:   
+    7: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:5:in `_app_views_sensor_v__env_data_show_html_erb___243957786830168942_70366704126080'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:30:17 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (9.2ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4:   
+    5: 
+    6:   <!-- <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    7:   -->
+    8: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:6:in `_app_views_sensor_v__env_data_show_html_erb___1542796857155373040_70146002273380'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:30:23 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (5.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4:   
+    5: 
+    6:   <!-- <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+    7:   -->
+    8: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:6:in `_app_views_sensor_v__env_data_show_html_erb___1542796857155373040_70146003273240'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:32:14 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (9.3ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_minute' for nil:NilClass):
+    3:   <h2>Plant Status for #Insert Plant Name Here</h2>
+    4: 
+    5: 
+    6:   <!-- <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %> -->
+    7: 
+    8:   
+    9: </div>
+  
+app/views/sensor/v1/env_data/show.html.erb:6:in `_app_views_sensor_v__env_data_show_html_erb___1540082775276471424_70203358782700'
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:32:44 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (1.9ms)
+Completed 200 OK in 22ms (Views: 11.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:38:45 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (1.7ms)
+Completed 200 OK in 29ms (Views: 14.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:38:48 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (0.7ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-29 21:39:06 -0700
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (0.6ms)
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:39:11 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (0.5ms)
+Completed 200 OK in 81ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 6198ms (Views: 6194.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:39:22 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (0.6ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-29 21:39:24 -0700
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 202ms (Views: 200.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:39:45 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (0.5ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-08-29 21:49:50 -0700
+  [1m[35m (33.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensorID"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb
+  Rendered sensor/v1/env_data/show.html.erb (2.2ms)
+Completed 200 OK in 82ms (Views: 29.1ms | ActiveRecord: 35.0ms)
+
+
