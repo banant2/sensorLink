@@ -1,17 +1,18 @@
 <div class="col-md-12">
   <div class="jumbotron">
 
-    <h2>Plant Status for #Insert Plant Name Here</h2>
+    <h2><%=h @plant.name%> Status</h2>
 
   </div>
+    <div class="jumbotron">
+      <h2> Soil Conductivity</h2>
+      <%= line_chart @env_info.group_by_minute(:record_time).maximum(:soil_conduct) %>
 
-    <div class="panel panel-default">
-      <div class="panel-heading"> Soil Conductivity</div>
-      <%= line_chart @env_data.group_by_minute(:record_time).maximum(:soil_conduct) %>
-    </div>
       <h2>Temp</h2>
-      <%= line_chart @env_data.group_by_minute(:record_time).maximum(:temp) %>
+      <%= line_chart @env_info.group_by_minute(:record_time).maximum(:temp) %>
+
       <h2>Light</h2>
-      <%= line_chart @env_data.group_by_minute(:record_time).maximum(:light) %>
+      <%= line_chart @env_info.group_by_minute(:record_time).maximum(:light) %>
+    </div>
 
 </div>

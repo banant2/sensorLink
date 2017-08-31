@@ -9,8 +9,9 @@ module Sensor
       end
 
       def show
-        @env_data = EnvDatum.where(sensorID: params[:sensorID])
-        puts data:@env_data
+        @env_info = EnvDatum.where(sensorID: params[:sensorID])
+        @plant = Plant.find(params[:sensorID])
+        puts data:@plant.name
       end
 
       def create
