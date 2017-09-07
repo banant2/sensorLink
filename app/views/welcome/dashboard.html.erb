@@ -1,20 +1,14 @@
 <div class="col-md-12">
-  <div class="jumbotron">
+  <div class="jumbotron text-center">
     <h1> Dashboard </h1>
     <p> Welcome back <%= current_user.name %>! </p>
   </div>
-  <div class="jumbotron">
-    <div class="btn-group" role="group">
+    <div class="container-fluid col-sm-3">
+      <% @plant_auth.each do |rows, columns| %>
+        <%= link_to columns, sensor_v1_env_datum_path(rows), :class => "btn btn-primary btn-lg btn-block" %>
+      <% end %>
+    </div>
+    <div class="container-fluid col-sm-3">
 
-
-
-        <div class="btn-group-vertical">
-          <% @plant_auth.each do |rows, columns| %>
-            <%= link_to columns, sensor_v1_env_datum_path(rows), :class => "btn" %>
-          <% end %>
-        </div>
-
-
-
-  </div>
+    </div>
 </div>

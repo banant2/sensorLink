@@ -4,7 +4,7 @@
     <h2><%=h @plant.name%> Status</h2>
 
   </div>
-    <div class="jumbotron">
+    <div class="container-fluid col-sm-*">
       <h2> Soil Conductivity</h2>
       <%= line_chart @env_info.group_by_minute(:record_time).maximum(:soil_conduct) %>
 
