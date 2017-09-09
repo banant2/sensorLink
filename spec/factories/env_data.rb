@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :env_datum do
-    sensorID 1
+    sensor_id 1
     record_time ""
     temp 76
     soil_conduct 876

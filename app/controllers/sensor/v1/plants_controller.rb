@@ -4,7 +4,7 @@ module Sensor
       before_action :require_login
 
       def index
-        @plant = Plant.order('sensorID DESC');
+        @plant = Plant.order('sensor_id DESC');
         render json: {status: 'SUCCESS', message: 'loaded plant', data: @plant}, status: :ok
       end
 
@@ -13,7 +13,7 @@ module Sensor
       end
 
       def show
-        @plant = Plant.find(params[:sensorID])
+        @plant = Plant.find(params[:sensor_id])
         render json: {status: 'SUCCESS', message: 'loaded plant', data: plant}, status: :ok
       end
 
@@ -29,7 +29,7 @@ module Sensor
 
       def update
 
-        @plant = Plant.find(params[:sensorID])
+        @plant = Plant.find(params[:sensor_id])
         if plant.update_attributes(plant_params)
             redirect_to sensor_v1_plant_path, notice: 'Plant Updated Successfully'
         else
@@ -44,7 +44,7 @@ module Sensor
         end
 
         def plant_params
-          params.require(:plant).permit(:sensorID, :name, :sci_name, :nickname, :zipcode, :notes, :owner_id)
+          params.require(:plant).permit(:sensor_id, :name, :sci_name, :nickname, :zipcode, :notes, :owner_id, :last_record)
         end
       end
     end

@@ -11,8 +11,8 @@ SensorLink::Application.routes.draw do
 
   namespace :sensor do
     namespace :v1 do
-      resources :env_data, param: :sensorID
-      resources :plants, param: :sensorID
+      resources :env_data, param: :sensor_id
+      resources :plants, param: :sensor_id
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810230728) do
+ActiveRecord::Schema.define(version: 20170908063927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170810230728) do
   end
 
   create_table "env_data", force: :cascade do |t|
-    t.integer "sensorID", null: false
+    t.integer "sensor_id", null: false
     t.datetime "record_time", default: -> { "now()" }
     t.integer "temp", null: false
     t.integer "soil_conduct", null: false
@@ -47,17 +47,15 @@ ActiveRecord::Schema.define(version: 20170810230728) do
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
   end
 
-  create_table "plants", id: false, force: :cascade do |t|
-    t.integer "sensorID", null: false
+  create_table "plants", primary_key: "sensor_id", id: :integer, default: nil, force: :cascade do |t|
+    t.integer "owner_id"
     t.string "name"
     t.string "sci_name", null: false
-    t.string "nickname"
     t.integer "zipcode", null: false
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "owner_id"
-    t.index ["sensorID"], name: "index_plants_on_sensorID", unique: true
+    t.datetime "last_record"
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,9 +3,9 @@
 
   <%= form_for [:sensor, :v1, @plant] do |f| %>
 
-    <%= form_group_for f, :sensorID, label: false do %>
+    <%= form_group_for f, :sensor_id, label: false do %>
       <div class="input-group">
-        <%= f.number_field :sensorID, class: 'form-control input-lg', placeholder: 'SensorID' %>
+        <%= f.number_field :sensor_id, class: 'form-control input-lg', placeholder: 'Sensor ID' %>
         <span class="input-group-addon glyphicon glyphicon-tag"></span>
       </div>
     <% end %>
@@ -21,13 +21,6 @@
       <div class="input-group">
         <%= f.text_field :sci_name, class: 'form-control input-lg', placeholder: 'Scientific Name' %>
         <span class="input-group-addon glyphicon glyphicon-tree-conifer"></span>
-      </div>
-    <% end %>
-
-    <%= form_group_for f, :nickname, label: false do %>
-      <div class="input-group">
-        <%= f.text_field :nickname, class: 'form-control input-lg', placeholder: 'Nickname' %>
-        <span class="input-group-addon glyphicon  glyphicon-tree-conifer"></span>
       </div>
     <% end %>
 

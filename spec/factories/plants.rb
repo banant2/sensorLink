@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :plant do
-    sensorID 1
+    sensor_id 1
     name ""
     sci_name "sequoia semperverens"
     nickname ""
