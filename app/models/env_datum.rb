@@ -1,4 +1,5 @@
 class EnvDatum < ApplicationRecord
+  #attr_accessible :temp, :soil_conduct, :light
   belongs_to :plant, foreign_key: 'sensor_id'
 
   validates :sensor_id, presence: true

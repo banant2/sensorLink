@@ -10,6 +10,7 @@ module Sensor
 
       def show
         @env_info = EnvDatum.where(sensor_id: params[:sensor_id])
+        @plant = Plant.find(params[:sensor_id])
       end
 
       def create
@@ -24,7 +25,7 @@ module Sensor
          data_time = EnvDatum.select('record_time').reverse_order.limit(1)
          puts data_time.inspect
          Plant.update(params[:sensor_id],last_record: data_time[0].record_time)
-         
+
       end
 
       def destroy

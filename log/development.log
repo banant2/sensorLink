@@ -40641,3 +40641,1638 @@ Unpermitted parameter: :env_datum
 Completed 200 OK in 115ms (Views: 1.0ms | ActiveRecord: 32.0ms)
 
 
+Started POST "/sensor/v1/env_data" for 127.0.0.1 at 2017-09-08 23:59:29 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#create as */*
+  Parameters: {"sensor_id"=>4, "temp"=>50, "soil_conduct"=>840, "light"=>10, "env_datum"=>{"sensor_id"=>4, "temp"=>50, "soil_conduct"=>840, "light"=>10}}
+Unpermitted parameter: :env_datum
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "env_data" ("sensor_id", "temp", "soil_conduct", "light") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sensor_id", 4], ["temp", 50], ["soil_conduct", 840], ["light", 10]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEnvDatum Load (1.5ms)[0m  [1m[34mSELECT  "env_data"."record_time" FROM "env_data" ORDER BY "env_data"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data"."record_time" FROM "env_data" ORDER BY "env_data"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensor_id" = $1 AND ("plants"."sensor_id" != $2) LIMIT $3[0m  [["sensor_id", 4], ["sensor_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "plants" SET "last_record" = $1, "updated_at" = $2 WHERE "plants"."sensor_id" = $3[0m  [["last_record", "2017-09-09 06:59:29.897649"], ["updated_at", "2017-09-09 06:59:29.978584"], ["sensor_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 113ms (Views: 1.1ms | ActiveRecord: 30.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 00:06:24 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 3.7ms)
+
+
+  
+NameError (uninitialized constant WelcomeController::Plants):
+  
+app/controllers/welcome_controller.rb:24:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 00:07:04 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (3.0ms)[0m  [1m[34mSELECT  "plants"."name", soil_conduct, temp, light FROM "plants" JOIN env_data ON plants.last_record = env_data.record_time WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE Plant Load (0.1ms)[0m  [1m[34mSELECT  "plants"."name", soil_conduct, temp, light FROM "plants" JOIN env_data ON plants.last_record = env_data.record_time WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."name", soil_conduct, temp, light FROM "plants" JOIN env_data ON plants.last_record = env_data.record_time WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 788ms (Views: 738.9ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 00:13:18 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.7ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON plants.last_record = env_data.record_time WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE Plant Load (0.1ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON plants.last_record = env_data.record_time WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON plants.last_record = env_data.record_time WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 797ms (Views: 746.5ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 00:14:17 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.6ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON env_data.record_time =plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.8ms)
+  [1m[36mCACHE Plant Load (0.1ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON env_data.record_time =plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON env_data.record_time =plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 903ms (Views: 854.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 00:38:42 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.9ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.3ms)
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct, env_data.temp, env_data.light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 732ms (Views: 673.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:00:36 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.6ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE Plant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+Completed 200 OK in 800ms (Views: 746.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:05:20 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.5ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE Plant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+Completed 200 OK in 817ms (Views: 766.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:07:12 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (No association found for name `user'. Has it been defined yet?):
+  
+app/models/plant.rb:4:in `<class:Plant>'
+app/models/plant.rb:1:in `<top (required)>'
+app/controllers/welcome_controller.rb:6:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:09:19 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (2.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+Completed 200 OK in 802ms (Views: 756.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:18:47 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.8ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+Completed 200 OK in 708ms (Views: 659.7ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:19:15 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.5ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+Completed 200 OK in 713ms (Views: 668.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:27:54 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.7ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct as soil_conduct, env_data.temp as temp, env_data.light as light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct as soil_conduct, env_data.temp as temp, env_data.light as light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct as soil_conduct, env_data.temp as temp, env_data.light as light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 711ms (Views: 666.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:30:16 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.4ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct as env_soil_conduct, env_data.temp as env_temp, env_data.light as env_light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct as env_soil_conduct, env_data.temp as env_temp, env_data.light as env_light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", env_data.soil_conduct as env_soil_conduct, env_data.temp as env_temp, env_data.light as env_light FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 676ms (Views: 630.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:31:11 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/controllers/welcome_controller.rb:24: syntax error, unexpected tSTRING_BEG, expecting '('
+...'sensor_id','name','env_data'.'soil_conduct','env_data.temp'...
+...                               ^
+/Users/Macbook/plants/sensorLink/app/controllers/welcome_controller.rb:24: syntax error, unexpected ',', expecting keyword_end
+...ame','env_data'.'soil_conduct','env_data.temp','env_data.lig...
+...                               ^
+/Users/Macbook/plants/sensorLink/app/controllers/welcome_controller.rb:24: syntax error, unexpected ',', expecting keyword_end
+...'soil_conduct','env_data.temp','env_data.light').where(owner...
+...                               ^
+/Users/Macbook/plants/sensorLink/app/controllers/welcome_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+...nv_data.temp','env_data.light').where(owner_id: current_user...
+...                               ^):
+  
+app/controllers/welcome_controller.rb:24: syntax error, unexpected tSTRING_BEG, expecting '('
+app/controllers/welcome_controller.rb:24: syntax error, unexpected ',', expecting keyword_end
+app/controllers/welcome_controller.rb:24: syntax error, unexpected ',', expecting keyword_end
+app/controllers/welcome_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:38:55 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.8ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (3.6ms)
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 699ms (Views: 652.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:45:12 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 810ms (Views: 756.0ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:50:43 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (2.1ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" as env_soil_conduct FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 ORDER BY "plants"."sensor_id" ASC LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 1]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 710ms (Views: 654.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 01:54:08 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (4.5ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" as env_soil_conduct FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 4.1ms)
+
+
+  
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" as env_soil_conduct FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `env_soil_conduct' for #<Plant::ActiveRecord_Relation:0x007fd91a2ff468>):
+  
+app/controllers/welcome_controller.rb:24:in `dashboard'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-09-09 01:54:25 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 1144ms (Views: 1006.3ms | ActiveRecord: 21.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 02:05:04 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 3.5ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Plant' to association named 'plant'; perhaps you misspelled it?):
+  
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 02:06:20 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 3.5ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Plant' to association named 'env_datum'; perhaps you misspelled it?):
+  
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 02:06:40 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 7.4ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007fdb5414ba18>
+Did you mean?  attr_accessor):
+  
+app/models/env_datum.rb:2:in `<class:EnvDatum>'
+app/models/env_datum.rb:1:in `<top (required)>'
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 02:07:43 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[34mSELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 13.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DuplicateAlias: ERROR:  table name "env_data" specified more than once
+: SELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2):
+  
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 02:08:35 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Plant' to association named 'plants'; perhaps you misspelled it?):
+  
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 02:09:00 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.5ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[34mSELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 10.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DuplicateAlias: ERROR:  table name "env_data" specified more than once
+: SELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2):
+  
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 02:10:20 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[34mSELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 7.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DuplicateAlias: ERROR:  table name "env_data" specified more than once
+: SELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2):
+  
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 02:10:23 -0700
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DuplicateAlias: ERROR:  table name "env_data" specified more than once
+: SELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2):
+  
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 09:08:57 -0700
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[34mSELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 9.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DuplicateAlias: ERROR:  table name "env_data" specified more than once
+: SELECT  DISTINCT "plants"."sensor_id" FROM "plants" LEFT OUTER JOIN "env_data" ON "env_data"."sensor_id" = "plants"."sensor_id" INNER JOIN env_data ON env_data.record_time = plants.last_record LIMIT $1):
+  
+app/controllers/welcome_controller.rb:26:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 09:14:43 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[36mPlant Load (1.7ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" as env_soil_conduct FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" as env_soil_conduct FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Plant Load (0.0ms)[0m  [1m[34mSELECT  "plants"."sensor_id", "plants"."name", "env_data"."soil_conduct" as env_soil_conduct FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 LIMIT $2[0m  [["owner_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 703ms (Views: 656.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 09:36:06 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = $1[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 7.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedParameter: ERROR:  there is no parameter $1
+LINE 1: ....record_time = plants.last_record WHERE plants.owner_id = $1
+                                                                     ^
+: SELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = $1):
+  
+app/controllers/welcome_controller.rb:25:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 09:36:39 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 705ms (Views: 672.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 09:41:09 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 1454ms (Views: 1381.9ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 10:22:15 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 5.2ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/views/welcome/dashboard.html.erb:13: syntax error, unexpected '(', expecting ')'
+...append=( bar_chart @dash_chart(:name).(:env_soil_conduct) );...
+...                               ^
+/Users/Macbook/plants/sensorLink/app/views/welcome/dashboard.html.erb:13: syntax error, unexpected ')', expecting keyword_end
+...rt(:name).(:env_soil_conduct) );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/welcome/dashboard.html.erb:13: syntax error, unexpected '(', expecting ')'
+app/views/welcome/dashboard.html.erb:13: syntax error, unexpected ')', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-09-09 10:37:59 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `group' for #<PG::Result:0x007f9e2c716160>
+Did you mean?  group_by):
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12: 
+    13:       <%= bar_chart @dash_chart.group(:name).(:env_soil_conduct) %>
+    14: 
+    15:     </div>
+    16: </div>
+  
+app/views/welcome/dashboard.html.erb:13:in `_app_views_welcome_dashboard_html_erb__3351116177163091053_70158663593920'
+Started GET "/" for 127.0.0.1 at 2017-09-09 10:42:25 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<PG::Result:0x007fd290926778>
+Did you mean?  fname):
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12: 
+    13:       <%= line_chart [{name: @dash_chart.name, data: @dash_chart.env_soil_conduct}]%>
+    14: 
+    15:     </div>
+    16: </div>
+  
+app/views/welcome/dashboard.html.erb:13:in `_app_views_welcome_dashboard_html_erb___4023872350819913867_70271167617740'
+Started GET "/" for 127.0.0.1 at 2017-09-09 10:47:13 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 5.2ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/views/welcome/dashboard.html.erb:15: syntax error, unexpected '<'
+    </div>
+     ^
+/Users/Macbook/plants/sensorLink/app/views/welcome/dashboard.html.erb:16: unknown regexp options - dv
+/Users/Macbook/plants/sensorLink/app/views/welcome/dashboard.html.erb:17: unterminated string meets end of file
+/Users/Macbook/plants/sensorLink/app/views/welcome/dashboard.html.erb:17: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/welcome/dashboard.html.erb:15: syntax error, unexpected '<'
+app/views/welcome/dashboard.html.erb:16: unknown regexp options - dv
+app/views/welcome/dashboard.html.erb:17: unterminated string meets end of file
+app/views/welcome/dashboard.html.erb:17: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-09-09 10:47:52 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (2.2ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 871ms (Views: 822.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 10:50:58 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 672ms (Views: 638.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 10:52:14 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 5.3ms)
+
+
+  
+NameError (undefined local variable or method `result' for #<WelcomeController:0x007ff0327a6168>
+Did you mean?  results):
+  
+app/controllers/welcome_controller.rb:32:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-09 10:52:34 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 848ms (Views: 818.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 11:02:07 -0700
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[34mSELECT  plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 555ms (Views: 543.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-09 22:59:35 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 679ms (Views: 643.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:01:56 -0700
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (2.4ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 830ms (Views: 792.0ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:02:43 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.0ms)
+
+
+  
+NoMethodError (undefined method `name' for #<ActiveRecord::Result:0x007feccf5e8080>):
+  
+app/controllers/welcome_controller.rb:27:in `dashboard'
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:10:57 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.7ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 6.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Plants):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= Plants.group(name).count(name) %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb__4272711499346512230_70290507241500'
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:11:34 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Plants):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plants.group(name).count(name) %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb__203724804582368352_70298077007700'
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:12:07 -0700
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 11.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Plants):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plants.group(:name).count(:name) %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb___2592081910557858162_70355726768040'
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:12:34 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT COUNT("plants"."name") AS count_name, "plants"."name" AS plants_name FROM "plants" GROUP BY "plants"."name"[0m
+  Rendered welcome/dashboard.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 782ms (Views: 741.5ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:13:52 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT MAX("plants"."sensor_id") AS maximum_sensor_id, "plants"."name" AS plants_name FROM "plants" GROUP BY "plants"."name"[0m
+  Rendered welcome/dashboard.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 791ms (Views: 757.7ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:16:17 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "plants"."last_record" FROM "plants" GROUP BY "plants"."name"[0m
+  Rendered welcome/dashboard.html.erb within layouts/application (17.4ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 10.9ms)
+
+
+  
+ActionView::Template::Error (PG::GroupingError: ERROR:  column "plants.last_record" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: SELECT "plants"."last_record" FROM "plants" GROUP BY "plants...
+               ^
+: SELECT "plants"."last_record" FROM "plants" GROUP BY "plants"."name"):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plant.group(:name).pluck(:last_record) %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb__1722289990491653715_70284446283580'
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:33:37 -0700
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.3ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "plants"."last_record" FROM "plants" GROUP BY "plants"."name"[0m
+  Rendered welcome/dashboard.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 9.3ms)
+
+
+  
+ActionView::Template::Error (PG::GroupingError: ERROR:  column "plants.last_record" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: SELECT "plants"."last_record" FROM "plants" GROUP BY "plants...
+               ^
+: SELECT "plants"."last_record" FROM "plants" GROUP BY "plants"."name"):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plant.group(:name).pluck(:last_record) %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb__4431549529627257195_70095705252060'
+Started GET "/" for 127.0.0.1 at 2017-09-10 18:34:19 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT MAX("plants"."sensor_id") AS maximum_sensor_id, "plants"."name" AS plants_name FROM "plants" GROUP BY "plants"."name"[0m
+  Rendered welcome/dashboard.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 711ms (Views: 674.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-10 18:44:52 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 7.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <div class="col-md-12">
+    2:   <div class="jumbotron">
+    3: 
+    4:     <h2><%=h @plant.name%> Status</h2>
+    5: 
+    6:   </div>
+    7:     <div class="container-fluid col-sm-*">
+  
+app/views/sensor/v1/env_data/show.html.erb:4:in `_app_views_sensor_v__env_data_show_html_erb___3597203035743232324_70185183225280'
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-09-10 18:45:02 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (158.1ms)
+Completed 200 OK in 829ms (Views: 793.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-09-10 18:45:05 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <div class="col-md-12">
+    2:   <div class="jumbotron">
+    3: 
+    4:     <h2><%=h @plant.name%> Status</h2>
+    5: 
+    6:   </div>
+    7:     <div class="container-fluid col-sm-*">
+  
+app/views/sensor/v1/env_data/show.html.erb:4:in `_app_views_sensor_v__env_data_show_html_erb___3597203035743232324_70185174634860'
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-10 18:47:50 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <div class="col-md-12">
+    2:   <div class="jumbotron">
+    3: 
+    4:     <h2><%=h @plant.name%> Status</h2>
+    5: 
+    6:   </div>
+    7:     <div class="container-fluid col-sm-*">
+  
+app/views/sensor/v1/env_data/show.html.erb:4:in `_app_views_sensor_v__env_data_show_html_erb___3597203035743232324_70185184495080'
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-10 18:49:55 -0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 3.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <div class="col-md-12">
+    2:   <div class="jumbotron">
+    3: 
+    4:     <h2><%=@plant.name%> Status</h2>
+    5: 
+    6:   </div>
+    7:     <div class="container-fluid col-sm-*">
+  
+app/views/sensor/v1/env_data/show.html.erb:4:in `_app_views_sensor_v__env_data_show_html_erb___4545384598792469014_70209214322540'
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-10 18:55:56 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <div class="col-md-12">
+    2:   <div class="jumbotron">
+    3: 
+    4:     <h2><%=@plant.name%> Status</h2>
+    5: 
+    6:   </div>
+    7:     <div class="container-fluid col-sm-*">
+  
+app/views/sensor/v1/env_data/show.html.erb:4:in `_app_views_sensor_v__env_data_show_html_erb__1023116129325713992_70328416944760'
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-10 18:58:41 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (21.9ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (1.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 852ms (Views: 812.6ms | ActiveRecord: 29.0ms)
+
+
+Started GET "/sensor/v1/env_data/4" for 127.0.0.1 at 2017-09-10 19:00:05 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"4"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 4]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 4]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 4]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (543.5ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 4], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 4], ["LIMIT", 11]]
+Completed 200 OK in 786ms (Views: 771.0ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-09-10 19:00:17 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"1"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (503.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 686ms (Views: 675.8ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 10:19:48 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (2.1ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 8.2ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Plant' to association named 'ecord_time'; perhaps you misspelled it?):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plant.joins(:ecord_time => :last_record).where(owner_id: current_user.id).group(:name).sum %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb__1093926668771075830_70318084566320'
+Started GET "/" for 127.0.0.1 at 2017-09-11 10:20:12 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Plant' to association named 'record_time'; perhaps you misspelled it?):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plant.joins(:record_time => :last_record).where(owner_id: current_user.id).group(:name).sum %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb___1855344485422796525_70264729041880'
+Started GET "/" for 127.0.0.1 at 2017-09-11 10:20:54 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 7.8ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Plant' to association named 'last_record'; perhaps you misspelled it?):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plant.joins(:last_record => :record_time).where(owner_id: current_user.id).group(:name).sum %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb___1435295798875306819_70345306288700'
+Started GET "/" for 127.0.0.1 at 2017-09-11 10:20:56 -0700
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  Rendered welcome/dashboard.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Plant' to association named 'last_record'; perhaps you misspelled it?):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plant.joins(:last_record => :record_time).where(owner_id: current_user.id).group(:name).sum %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb___1435295798875306819_70345328563380'
+Started GET "/" for 127.0.0.1 at 2017-09-11 10:36:54 -0700
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT SUM() AS sum, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 1]]
+  Rendered welcome/dashboard.html.erb within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 12.3ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedFunction: ERROR:  function sum() does not exist
+LINE 1: SELECT SUM() AS sum, "plants"."name" AS plants_name FROM "pl...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+: SELECT SUM() AS sum, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"):
+     9:       <% end %>
+    10:     </div>
+    11:     <div class="container-fluid col-sm-9">
+    12:         <%= bar_chart Plant.joins("INNER JOIN env_data ON env_data.record_time = plants.last_record").where(owner_id: current_user.id).group(:name).sum %>
+    13: 
+    14:     </div>
+    15: </div>
+  
+app/views/welcome/dashboard.html.erb:12:in `_app_views_welcome_dashboard_html_erb___2444603808239016357_70353070311460'
+Started GET "/" for 127.0.0.1 at 2017-09-11 10:37:22 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 1]]
+  Rendered welcome/dashboard.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 697ms (Views: 664.8ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 10:38:19 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT SUM(soil_conduct) AS sum_soil_conduct, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 1]]
+  Rendered welcome/dashboard.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 618ms (Views: 584.0ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:39:22 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (19.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 300ms (Views: 276.2ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:40:35 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (23.2ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 698ms (Views: 659.0ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:40:40 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.9ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 326ms (Views: 316.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:40:47 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (9.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.8ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 349ms (Views: 341.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 10:40:50 -0700
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT SUM(soil_conduct) AS sum_soil_conduct, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 1]]
+  Rendered welcome/dashboard.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 237ms (Views: 215.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:40:52 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (12.9ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.8ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 256ms (Views: 245.5ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:41:34 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <div class="col-md-12">
+    2:   <div class="jumbotron">
+    3: 
+    4:     <h2> <%= @plant.name %> Status</h2>
+    5: 
+    6:   </div>
+    7:     <div class="container-fluid col-sm-*">
+  
+app/views/sensor/v1/env_data/show.html.erb:4:in `_app_views_sensor_v__env_data_show_html_erb___1870037947833998560_70217392172160'
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:42:21 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.5ms)
+
+
+  
+SyntaxError (/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:6: syntax error, unexpected '<'
+  </div>
+   ^
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:8: unknown regexp option - h
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:8: syntax error, unexpected tINTEGER, expecting ')'
+      <h2> Soil Conductivity</h2>
+                                ^
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:11: syntax error, unexpected '<', expecting ')'
+      <h2>Temp</h2>
+       ^
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:14: unknown regexp option - h
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:14: syntax error, unexpected tINTEGER, expecting ')'
+      <h2>Light</h2>
+                   ^
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:16: syntax error, unexpected '<', expecting ')'
+    </div>
+     ^
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:18: unknown regexp options - dv
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:19: unterminated string meets end of file
+/Users/Macbook/plants/sensorLink/app/views/sensor/v1/env_data/show.html.erb:19: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/sensor/v1/env_data/show.html.erb:6: syntax error, unexpected '<'
+app/views/sensor/v1/env_data/show.html.erb:8: unknown regexp option - h
+app/views/sensor/v1/env_data/show.html.erb:8: syntax error, unexpected tINTEGER, expecting ')'
+app/views/sensor/v1/env_data/show.html.erb:11: syntax error, unexpected '<', expecting ')'
+app/views/sensor/v1/env_data/show.html.erb:14: unknown regexp option - h
+app/views/sensor/v1/env_data/show.html.erb:14: syntax error, unexpected tINTEGER, expecting ')'
+app/views/sensor/v1/env_data/show.html.erb:16: syntax error, unexpected '<', expecting ')'
+app/views/sensor/v1/env_data/show.html.erb:18: unknown regexp options - dv
+app/views/sensor/v1/env_data/show.html.erb:19: unterminated string meets end of file
+app/views/sensor/v1/env_data/show.html.erb:19: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:42:56 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (15.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.6ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 747ms (Views: 701.4ms | ActiveRecord: 32.0ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 10:44:46 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 1]]
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (15.8ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.8ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 693ms (Views: 630.1ms | ActiveRecord: 27.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:07:33 -0700
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.3ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT SUM(soil_conduct) AS sum_soil_conduct, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 1]]
+  Rendered welcome/dashboard.html.erb within layouts/application (70.3ms)
+Completed 200 OK in 439ms (Views: 421.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-09-11 11:07:39 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"1"}
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 1]]
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (578.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (1.5ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 864ms (Views: 837.0ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/sensor/v1/env_data/4" for 127.0.0.1 at 2017-09-11 11:07:46 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"4"}
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 4], ["LIMIT", 1]]
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 4]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 4]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 4]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (518.0ms)
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 4], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 4], ["LIMIT", 11]]
+Completed 200 OK in 757ms (Views: 738.2ms | ActiveRecord: 14.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-09-11 11:11:11 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Tto7o1+lCHjOqvMj77qFGuB0BWZfzg322R3jJNTYEci4iUT5OvLSe6vkIIAOfTldvEqwhfUpGsa18suBUHDVNw=="}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:11:11 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 194ms (Views: 190.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-09-11 11:11:18 -0700
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"IvEBSKpM28f2epKgB9ii8YdTIZCPsdlIRjHIZIyZ4n9C4Z65x+VCXzf//p8nmuMOsgT57N1/mWnUSsqnpf8yzg=="}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 234ms (Views: 229.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-09-11 11:11:18 -0700
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"FAia9zuiiCnPdME0Psa4ypDE02Yg9ubzOnQOG0TMwMd0GAUGVgsRsQ7xrQsehPk1pZMLGnI4ptKoDwzYbaoQdg=="}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 522ms (Views: 518.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-09-11 11:11:24 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:11:55 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 222ms (Views: 220.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:12:01 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 305ms (Views: 302.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:12:03 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 206ms (Views: 203.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:12:06 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 197ms (Views: 195.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:13:11 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 178ms (Views: 175.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:14:18 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 650ms (Views: 648.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2017-09-11 11:14:21 -0700
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 352ms (Views: 273.7ms | ActiveRecord: 18.8ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2017-09-11 11:14:40 -0700
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F/joBj6l4aBVaPB2w986uRmIRXuQ1PriU13o78NY1ul36Hf3Uwx4OJTtnEnjnXtGLN+dB8IausPBJuos6j4GWA==", "account"=>{"owner_attributes"=>{"name"=>"Test Account", "email"=>"sample@google.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}, "commit"=>"Create Account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sample@google.com"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 599ms (Views: 363.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2017-09-11 11:14:49 -0700
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xUfBYhdAiV9Zk/2nAxndQACe4rDvEM3ww/A55n/Rn66lV16TeukQx5gWkZgjW5y/Nck6zL3ejdFRizslVrdPHw==", "account"=>{"owner_attributes"=>{"name"=>"Test Account", "email"=>"sample@google.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sample@google.com"], ["LIMIT", 1]]
+  [1m[35mSQL (10.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Test Account"], ["email", "sample@google.com"], ["encrypted_password", "$2a$11$dPhU.307C7KvIsqUeycevunCfbUvepFdvxYq2nNWCquYBjprQWKtS"], ["created_at", "2017-09-11 18:14:49.820289"], ["updated_at", "2017-09-11 18:14:49.820289"]]
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "accounts" ("owner_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["owner_id", 2], ["created_at", "2017-09-11 18:14:49.832107"], ["updated_at", "2017-09-11 18:14:49.832107"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 228ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:14:49 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 290ms (Views: 287.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-09-11 11:14:55 -0700
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"ZqIJky0WmQ1E9uDhELpSThoqgU5gzv1foaIyGHwPcNYGspZiQL8AlYVzjN4w+BOxL31ZMjIAvX4z2TDbVWmgZw=="}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 236ms (Views: 230.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-09-11 11:15:03 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sTCyip+gOvAMX+0jDc1xrQN6h6rpM0qi9T1hLH97u3/RIC178gmjaM3agRwtjzBSNi1f1rv9CoNnRmPvVh1rzg==", "user"=>{"email"=>"sample@google.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "sample@google.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 223ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:15:03 -0700
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 2]]
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT SUM(soil_conduct) AS sum_soil_conduct, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 2]]
+  Rendered welcome/dashboard.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 249ms (Views: 226.8ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/sensor/v1/plants/new" for 127.0.0.1 at 2017-09-11 11:15:11 -0700
+Processing by Sensor::V1::PlantsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering sensor/v1/plants/new.html.erb within layouts/application
+  Rendered sensor/v1/plants/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 252ms (Views: 222.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sensor/v1/plants" for 127.0.0.1 at 2017-09-11 11:15:34 -0700
+Processing by Sensor::V1::PlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TFNxorlZEWQFpJupATc/BDJ7i3c/F/7ceAK94JxqXoRsprqDyK62NAGopokGiLT7IiQ6gKEeTQTfLUQqmVnLpA==", "plant"=>{"sensor_id"=>"5", "name"=>"Sample Name", "sci_name"=>"Ocimum basilicum", "zipcode"=>"12345", "notes"=>"", "owner_id"=>"2"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (4.4ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "plants" ("owner_id", "sensor_id", "name", "sci_name", "zipcode", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "sensor_id"[0m  [["owner_id", 2], ["sensor_id", 5], ["name", "Sample Name"], ["sci_name", "Ocimum basilicum"], ["zipcode", 12345], ["notes", ""], ["created_at", "2017-09-11 18:15:34.101049"], ["updated_at", "2017-09-11 18:15:34.101049"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:15:34 -0700
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM(soil_conduct) AS sum_soil_conduct, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 2]]
+  Rendered welcome/dashboard.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 307ms (Views: 290.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/sensor/v1/env_data/5" for 127.0.0.1 at 2017-09-11 11:15:45 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"5"}
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 1]]
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 5]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 5]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 5]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (19.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (1.3ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 11]]
+Completed 200 OK in 211ms (Views: 187.9ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/sensor/v1/env_data" for 127.0.0.1 at 2017-09-11 11:16:28 -0700
+Processing by Sensor::V1::EnvDataController#create as */*
+  Parameters: {"sensor_id"=>5, "temp"=>50, "soil_conduct"=>840, "light"=>10, "env_datum"=>{"sensor_id"=>5, "temp"=>50, "soil_conduct"=>840, "light"=>10}}
+Unpermitted parameter: :env_datum
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "env_data" ("sensor_id", "temp", "soil_conduct", "light") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sensor_id", 5], ["temp", 50], ["soil_conduct", 840], ["light", 10]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEnvDatum Load (1.6ms)[0m  [1m[34mSELECT  "env_data"."record_time" FROM "env_data" ORDER BY "env_data"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data"."record_time" FROM "env_data" ORDER BY "env_data"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlant Load (1.5ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."sensor_id" = $1 AND ("plants"."sensor_id" != $2) LIMIT $3[0m  [["sensor_id", 5], ["sensor_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "plants" SET "last_record" = $1, "updated_at" = $2 WHERE "plants"."sensor_id" = $3[0m  [["last_record", "2017-09-11 18:16:28.447229"], ["updated_at", "2017-09-11 18:16:28.484984"], ["sensor_id", 5]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 65ms (Views: 0.6ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:16:36 -0700
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT SUM(soil_conduct) AS sum_soil_conduct, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 2]]
+  Rendered welcome/dashboard.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 222ms (Views: 214.0ms | ActiveRecord: 3.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-09-11 11:16:42 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gK6SUlyUYqom0FBc5LHBffXB/QeRiKKsqBn9RGX2WPqgW1lzLWPF+iLcbXzjDkqC5Z5M8A+BEXQPNgSOYMXN2g=="}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:16:42 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 219ms (Views: 217.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-09-11 11:16:44 -0700
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"sYt84z7SuBzlKpFbZPQinbjRtegC8TBchU1QqPm1m9ubkHu3rAT2J8G52M+girtchfzrUJJvHw6jkWlFM1icmg=="}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 213ms (Views: 211.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-09-11 11:16:53 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TneNskAgrSqW68oAMFmQWAAk8OWilT4oSyC2UMnbCYhkbIrm0vbjEbJ4g5T0JwmZPQmuXTILEXpt/I+9AzYOyQ==", "user"=>{"email"=>"banant2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "banant2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:16:53 -0700
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM(soil_conduct) AS sum_soil_conduct, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 1]]
+  Rendered welcome/dashboard.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 251ms (Views: 244.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-09-11 11:17:05 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"1"}
+  [1m[36mPlant Load (1.8ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 1]]
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_minute_record_time_timestamptz_interval_0_second_at_ FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('minute', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (571.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 927ms (Views: 909.6ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/sensor/v1/env_data/1" for 127.0.0.1 at 2017-09-11 11:32:37 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"1"}
+  [1m[36mPlant Load (1.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 1]]
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 1]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (37.6ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.7ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 1], ["LIMIT", 11]]
+Completed 200 OK in 935ms (Views: 840.1ms | ActiveRecord: 53.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:39:47 -0700
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants"."sensor_id", "plants"."name" FROM "plants" WHERE "plants"."owner_id" = $1[0m  [["owner_id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT plants.sensor_id, plants.name,env_data.soil_conduct as env_soil_conduct FROM plants INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE plants.owner_id = 1[0m
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT SUM(soil_conduct) AS sum_soil_conduct, "plants"."name" AS plants_name FROM "plants" INNER JOIN env_data ON env_data.record_time = plants.last_record WHERE "plants"."owner_id" = $1 GROUP BY "plants"."name"[0m  [["owner_id", 1]]
+  Rendered welcome/dashboard.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 336ms (Views: 326.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/sensor/v1/env_data/3" for 127.0.0.1 at 2017-09-11 12:39:18 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"3"}
+  [1m[36mPlant Load (2.5ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 1]]
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 3]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (42.1ms)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (9.8ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 3], ["LIMIT", 11]]
+Completed 200 OK in 912ms (Views: 843.1ms | ActiveRecord: 20.2ms)
+
+
+Started GET "/sensor/v1/env_data/5" for 127.0.0.1 at 2017-09-11 12:39:21 -0700
+Processing by Sensor::V1::EnvDataController#show as HTML
+  Parameters: {"sensor_id"=>"5"}
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 1]]
+  Rendering sensor/v1/env_data/show.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT MAX("env_data"."soil_conduct") AS maximum_soil_conduct, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 5]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT MAX("env_data"."temp") AS maximum_temp, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 5]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT MAX("env_data"."light") AS maximum_light, (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_hour_record_time_timestamptz_interval_0_second_at_ti FROM "env_data" WHERE "env_data"."sensor_id" = $1 AND (record_time IS NOT NULL) GROUP BY (DATE_TRUNC('hour', (record_time::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m  [["sensor_id", 5]]
+  Rendered sensor/v1/env_data/show.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnvDatum Load (0.8ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 11]]
+  [1m[36mCACHE EnvDatum Load (0.0ms)[0m  [1m[34mSELECT  "env_data".* FROM "env_data" WHERE "env_data"."sensor_id" = $1 LIMIT $2[0m  [["sensor_id", 5], ["LIMIT", 11]]
+Completed 200 OK in 304ms (Views: 294.4ms | ActiveRecord: 5.9ms)
+
+

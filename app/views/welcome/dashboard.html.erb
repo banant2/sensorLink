@@ -9,7 +9,7 @@
       <% end %>
     </div>
     <div class="container-fluid col-sm-9">
-      
+        <%= bar_chart Plant.joins("INNER JOIN env_data ON env_data.record_time = plants.last_record").where(owner_id: current_user.id).group(:name).sum(:soil_conduct) %>
 
     </div>
 </div>

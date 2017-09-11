@@ -1,6 +1,6 @@
 class Plant < ApplicationRecord
   belongs_to :user, optional: true
-  has_many :EnvDatum, foreign_key: "sensor_id"
+  has_many :env_data, foreign_key: "sensor_id"
   accepts_nested_attributes_for :user
 
   self.primary_key= 'sensor_id'

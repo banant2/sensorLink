@@ -14,6 +14,7 @@ module Sensor
 
       def show
         @plant = Plant.find(params[:sensor_id])
+        puts @plant.inspect
         render json: {status: 'SUCCESS', message: 'loaded plant', data: plant}, status: :ok
       end
 
